@@ -34,7 +34,6 @@ class Page extends Component {
   render() {   
     return (
       <div className='page'>
-        foo
         {this.props.children.map(child => {
           if (child.nodeName.name === 'Navbar') return child;
           return;
