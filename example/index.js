@@ -48,7 +48,9 @@ class AboutPage extends Component {
 				<Navbar title="preact-f7" />
 				<button onClick={this.changeName}>CHANGE NAME</button>
 				<h1>{this.state.name}</h1>
-				<a href="/about/"> About Page</a>
+				<If condition={false}>
+					<a href="/about/"> About Page</a>
+				</If>
 
 			</Page>	
 		)

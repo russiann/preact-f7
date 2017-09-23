@@ -34,16 +34,16 @@ class Page extends Component {
     return (
       <div className='page'>
         {this.props.children.map(child => {
-          if (child.nodeName.name === 'Navbar') return child;
+          if (child && child.nodeName.name === 'Navbar') return child;
           return;
         })}
         {this.props.children.map(child => {
-          if (child.nodeName.name === 'Toolbar') return child;
+          if (child && child.nodeName.name === 'Toolbar') return child;
           return;
         })}
         <div className='page-content'>
           {this.props.children.map(child => {
-            if (child.nodeName.name !== 'Navbar' && child.nodeName.name !== 'Toolbar') return child;
+            if (child && child.nodeName.name !== 'Navbar' && child.nodeName.name !== 'Toolbar') return child;
             return;
           })}
         </div>
