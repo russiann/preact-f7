@@ -12,24 +12,23 @@ class Page extends Component {
     const instance = getInstance();
     const { hideNavbarOnScroll, withSubnavbar } = this.props;
     const { $el } = this.context.getF7Page();
-
     instance.views.current.router.removeThemeElements($el)
 
     if (hideNavbarOnScroll) {
       instance.navbar.initHideNavbarOnScroll($el);
     }
 
-    // if (withSubnavbar) {
-    //   this.addClass('page-with-subnavbar');
-    // }
+    if (withSubnavbar) {
+      this.addClass('page-with-subnavbar');
+    }
   }
 
-  // addClass(className) {
-  //   const pageElement = ReactDOM.findDOMNode(this).parentNode;
-  //   if (pageElement) {
-  //     window.Dom7(pageElement).addClass(className);
-  //   }
-  // }
+  addClass(className) {
+    const pageElement = this.base;
+    if (pageElement) {
+      window.Dom7(pageElement).addClass(className);
+    }
+  }
 
   render() {   
     return (

@@ -2,8 +2,7 @@ import { h, Component } from 'preact';
 import 'framework7/dist/css/framework7.css';
 import F7 from 'framework7';
 
-import { Framework7, View, Router, Route, Navbar } from '../dist/preact-f7';
-import { Page } from '../dist/preact-f7';
+import { Framework7, View, Router, Route, Navbar, Page } from '../dist/preact-f7';
 
 const params = {
   view: {
@@ -23,7 +22,7 @@ class HomePage extends Component {
 
 	render() {
 		return (
-			<Page>
+			<Page hideNavbarOnScroll>
 				<Navbar title="preact-f7" />
 				<button onClick={this.changeName}>CHANGE NAME</button>
 				<h1>{this.state.name}</h1>
