@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 import { Page, Navbar, Card, CardHeader, CardContent, CardFooter } from '../../dist/preact-f7';
 import { Block, List, ListItem } from '../../dist/preact-f7';
 

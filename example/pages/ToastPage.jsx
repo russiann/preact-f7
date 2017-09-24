@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { h, Component } from 'preact';
 import { Page, Navbar, Button, Block, Toast, Segmented, Icon } from '../../dist/preact-f7';
 
 export default class ToastPage extends Component{

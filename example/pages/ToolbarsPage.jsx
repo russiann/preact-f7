@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { h, Component } from 'preact';
 import { Page, Navbar, List, ListItem, Block, Toolbar, Button } from '../../dist/preact-f7';
 
 class SubNavbarsContainer extends Component {

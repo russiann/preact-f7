@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 import { Page, Navbar, SubNavbar, List, ListItem, Block, Segmented, Button } from '../../dist/preact-f7';
 
 const SubNavbars = () => (

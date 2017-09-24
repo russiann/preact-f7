@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 import { Page, Navbar, Block, Form, Input, Icon } from '../../dist/preact-f7';
 
 const defaultIcon = <Icon name="demo-list-icon" />;

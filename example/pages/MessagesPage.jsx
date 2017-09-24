@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { h, Component } from 'preact';
 import { Page, Navbar, MessageBar, Messages, Message } from '../../dist/preact-f7';
 
 export default class MessagesPage extends Component {

@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 import { Page, Navbar } from '../../dist/preact-f7';
 
 const RangeSlider = () => (

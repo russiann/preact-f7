@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 import { Page, Navbar, Block, BlockHeader, BlockFooter } from '../../dist/preact-f7';
 
 export default () => (

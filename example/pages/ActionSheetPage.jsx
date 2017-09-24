@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { h, Component } from 'preact';
 import { Page, Navbar, Block, GridCol, Button, ActionSheet, ActionButton, ActionGroup } from '../../dist/preact-f7';
 
 export default class ActionSheetPage extends Component {

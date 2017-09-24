@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 import { Page, Navbar, List, ListItem, Block } from '../../dist/preact-f7';
 
 export default () => (
