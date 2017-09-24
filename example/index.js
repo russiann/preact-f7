@@ -3,6 +3,8 @@ import 'framework7/dist/css/framework7.css';
 import F7 from 'framework7';
 import { Framework7, View, Router, Route, Navbar, Page } from '../dist/preact-f7';
 
+import './assets/stylesheets/styles.css';
+
 import AboutPage from './pages/AboutPage';
 import AccordionPage from './pages/AccordionPage';
 import ActionSheetPage from './pages/ActionSheetPage';
