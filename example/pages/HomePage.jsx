@@ -2,7 +2,7 @@ import { h, Component } from 'preact';
 import { Page, Navbar, List, ListItem, Block, Icon } from '../../dist/preact-f7';
 
 const HomePage = () => (
-  <Page hideNavbarOnScroll>
+  <Page>
     <Navbar
       left={<Icon ifIos="material:list" ifMaterial="material:menu" navbarIcon />}
       title="React F7"
