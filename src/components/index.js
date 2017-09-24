@@ -49,7 +49,7 @@ export { ItemTitle } from './Item/ItemTitle';
 export { ItemTitleRow } from './Item/ItemTitleRow';
 
 // Loader
-export { Loader } from './Loader/Preloader';
+export { Preloader } from './Loader/Preloader';
 
 // StatusBar
 export { StatusBar } from './StatusBar/StatusBar';

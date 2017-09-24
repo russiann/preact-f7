@@ -24,4 +24,6 @@ const InputText = ({ type, placeholder, label, media, children, value }) => (
   </li>
 );
 
+export const Select = InputText;
+
 export default InputText;

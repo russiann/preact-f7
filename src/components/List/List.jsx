@@ -6,13 +6,13 @@ import * as Default from './types/Default';
 
 class List extends Component {
 
-  renderChildren = () => {
+  renderChildren() {
     return React.Children.map(this.props.children, child => 
       React.cloneElement(child, {...child.props, listType: this.getListType()})
     )
   }
 
-  getListType = () => {
+  getListType() {
     const { simple, links, mediaList } = this.props;
     const cases = { simple, links, mediaList };
     return Object.keys(cases).reduce((type, curr) => cases[curr] ? curr : type,'');

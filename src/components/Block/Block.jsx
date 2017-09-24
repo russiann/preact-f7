@@ -1,7 +1,6 @@
 import { h } from 'preact';
 import PropTypes from 'prop-types';
 import { createClassName } from 'create-classname';
-import {Block} from '../index';
 
 const blockClass = createClassName('block', [
   'inset',

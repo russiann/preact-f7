@@ -8,7 +8,7 @@ const HomePage = () => (
       title="React F7"
       disableBackButton
     />
-
+    
     {/* <List links>
       <ListItem link="/about" text="About Framework7" />
     </List> */}

@@ -11,7 +11,7 @@
     "watch": "rollup -c --watch",
     "minify": "uglifyjs $npm_package_main -cm -o $npm_package_minified_main -p relative --in-source-map ${npm_package_main}.map --source-map ${npm_package_minified_main}.map",
     "size": "echo \"gzip size: $(gzip-size $npm_package_minified_main)\"",
-    "start": "preact watch ./example"
+    "start": "npm run build && preact watch ./example"
   },
   "babel": {
     "presets": [
@@ -28,20 +28,23 @@
     ]
   },
   "keywords": [
+    "jsx",
+    "f7",
+    "framework7",
     "preact",
     "rich text",
     "input"
   ],
-  "author": "Russian Rebouças <russian.reboucas@gmail.com>",
+  "author": "Hook Company",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/russiann/preact-f7.git"
+    "url": "https://github.com/hookcompany/preact-f7.git"
   },
   "bugs": {
-    "url": "https://github.com/russiann/preact-f7/issues"
+    "url": "https://github.com/hookcompany/preact-f7/issues"
   },
-  "homepage": "https://github.com/russiann/preact-f7",
+  "homepage": "https://github.com/hookcompany/preact-f7",
   "peerDependencies": {
     "preact": "*"
   },
@@ -74,6 +77,8 @@
     "uglify-js": "^2.8.24"
   },
   "dependencies": {
-    "create-classname": "^1.0.15"
+    "create-classname": "^1.0.15",
+    "lodash": "^4.17.4",
+    "prop-types": "^15.5.10"
   }
 }

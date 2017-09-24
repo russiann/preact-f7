@@ -28,7 +28,9 @@ class Framework7 extends Component {
 
     const f7params = {...defaultF7Params, ...params, routes};
 
+    console.log('before instance');
     const instance = new F7(f7params);
+    console.log('after instance');
 
     setInstance(instance);
   }
