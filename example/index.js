@@ -59,8 +59,8 @@ export default class App extends Component {
 						<Route path="/infinite-scroll" component={InfiniteScrollPage} />
 						<Route path="/inputs" component={InputsPage} /> */}
 						<Route path="/grid" component={GridPage} />
-						{/* <Route path="/lazy-load" component={LazyLoadPage} />
-        		<Route path="/list" component={ListsPage} /> */}
+						{/* <Route path="/lazy-load" component={LazyLoadPage} /> */}
+						<Route path="/list" component={ListsPage} />
 						{/* <Route path="/login-screen" component={LoginScreenPage} /> */}
 						<Route path="/messages" component={MessagesPage} />
 						<Route path="/navbar" component={NavbarsPage} />

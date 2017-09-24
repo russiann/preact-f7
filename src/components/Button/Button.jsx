@@ -15,8 +15,8 @@ const buttonClass = createClassName('button', [
   { name: 'ripple', className: ({ ripple }) => `ripple-${ripple}` }
 ]);
 
-export const Button = ({ children, title, ...props, style }) => (
-  <button className={buttonClass(props)} style={style}>{title || children}</button>
+export const Button = ({ children, title, ...props, style, onClick }) => (
+  <button className={buttonClass(props)} style={style} onClick={onClick}>{title || children}</button>
 );
 
 Button.propTypes = {

@@ -9,7 +9,7 @@ const List = ({children}) => (
 );
 
 const ListItem = ({children, text, link}) => (
-  <li>{children || text}</li>
+  <li>{text || children}</li>
 );
 
 export { List,  ListItem };

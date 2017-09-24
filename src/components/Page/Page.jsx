@@ -1,6 +1,12 @@
 import { h, Component } from 'preact';
 import PropTypes from 'prop-types';
 import { getInstance } from '../../instance';
+import { createClassName } from 'create-classname';
+
+const pageClass = createClassName('page', [
+  'withSubnavbar:page-with-subnavbar',
+]);
+
 
 class Page extends Component {
 
@@ -10,7 +16,7 @@ class Page extends Component {
 
   configurePage() {
     const instance = getInstance();
-    const { hideNavbarOnScroll, withSubnavbar } = this.props;
+    const { hideNavbarOnScroll /*, withSubnavbar*/ } = this.props;
     const { $el } = this.context.getF7Page();
     instance.views.current.router.removeThemeElements($el)
 
@@ -18,19 +24,9 @@ class Page extends Component {
       instance.navbar.initHideNavbarOnScroll($el);
     }
 
-    if (withSubnavbar) {
-      this.addClass('page-with-subnavbar');
-    }
   }
-
-  addClass(className) {
-    const pageElement = this.base;
-    if (pageElement) {
-      window.Dom7(pageElement).addClass(className);
-    }
-  }
-
   render() {   
+
     return (
       <div className='page'>
         {this.props.children.map(child => {

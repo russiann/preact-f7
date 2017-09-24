@@ -34,7 +34,7 @@ class SubNavbarsContainer extends Component {
         <Block className="md-only">
           <p>Material (MD) theme toolbar supports both top and bottom positions. Click the following button to change its position.</p>
           <p>
-            <Button onClick={() => this.toggleToolbarPosition()} title="TOGGLE TOOLBAR POSITION" raised />
+            <Button onClick={this.toggleToolbarPosition} title="TOGGLE TOOLBAR POSITION" raised />
           </p>
         </Block>
     
