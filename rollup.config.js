@@ -30,6 +30,7 @@ export default {
 			],
 			plugins: [
 				'jsx-control-statements',
+				'transform-class-properties',
 				['transform-es2015-classes', { loose: true }],
 				['transform-object-rest-spread'],
 				['transform-react-jsx', { pragma: 'h' }]

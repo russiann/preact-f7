@@ -50,6 +50,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-es2015-classes": "^6.3.15",
     "babel-plugin-transform-object-rest-spread": "^6.3.13",
     "babel-plugin-transform-react-jsx": "^6.3.13",
