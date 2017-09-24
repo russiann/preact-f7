@@ -7,9 +7,10 @@ import * as Default from './types/Default';
 class List extends Component {
 
   renderChildren() {
-    return React.Children.map(this.props.children, child => 
-      React.cloneElement(child, {...child.props, listType: this.getListType()})
-    )
+    return this.props.children.map(child => {
+      child.attributes = {...child.attributes, listType: this.getListType() }
+      return child; 
+    });
   }
 
   getListType() {

@@ -12,7 +12,7 @@ const List = ({children}) => (
 const ListItem = ({children, text, link, badge}) => (
   <li>
     <a href={link}>
-      {children || text}
+      {text || children}
       <If condition={badge}>
         <Badge >{badge}</Badge>
       </If>

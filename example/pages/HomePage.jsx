@@ -9,12 +9,12 @@ const HomePage = () => (
       disableBackButton
     />
     
-    {/* <List links>
+    <List links>
       <ListItem link="/about" text="About Framework7" />
-    </List> */}
+    </List>
 
     <Block title='Components' />
-    {/* <List links>
+    <List links>
       <ListItem link="/accordion" text="Accordion" />
       <ListItem link="/action-sheet" text="Action Sheet" />
       <ListItem link="/autocomplete" text="Autocomplete" badge="TODO" />
@@ -78,7 +78,7 @@ const HomePage = () => (
     <List links>
       <ListItem link="/page-loader-template7/vladimir/123/about-me/1/?start=0&end=30#top" text="Template7 Page" badge="TODO" />
       <ListItem link="/page-loader-component/vladimir/123/about-me/1/?start=0&end=30#top" text="Component Page" badge="TODO" />
-    </List> */}
+    </List>
   </Page>
 );
 
