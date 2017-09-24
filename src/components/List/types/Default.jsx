@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 import { createClassName } from 'create-classname';
 
 const listClass = createClassName('list', ['inset', 'tabletInset:tablet-inset', 'mediaList:media-list'])

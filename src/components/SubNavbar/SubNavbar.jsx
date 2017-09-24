@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 
 const SubNavbar = ({children, title}) => (
   <div className="subnavbar">

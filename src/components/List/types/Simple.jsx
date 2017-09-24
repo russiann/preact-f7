@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 
 const List = ({children}) => (
   <div className="list simple-list">

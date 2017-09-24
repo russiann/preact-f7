@@ -10,7 +10,8 @@
     "transpile": "rollup -c",
     "watch": "rollup -c --watch",
     "minify": "uglifyjs $npm_package_main -cm -o $npm_package_minified_main -p relative --in-source-map ${npm_package_main}.map --source-map ${npm_package_minified_main}.map",
-    "size": "echo \"gzip size: $(gzip-size $npm_package_minified_main)\""
+    "size": "echo \"gzip size: $(gzip-size $npm_package_minified_main)\"",
+    "start": "preact watch ./example"
   },
   "babel": {
     "presets": [
@@ -71,5 +72,8 @@
     "rollup-plugin-postcss": "^0.4.3",
     "rollup-watch": "^4.3.1",
     "uglify-js": "^2.8.24"
+  },
+  "dependencies": {
+    "create-classname": "^1.0.15"
   }
 }

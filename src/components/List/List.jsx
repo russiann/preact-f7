@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { h, Component } from 'preact';
 
 import * as Simple from './types/Simple';
 import * as Links from './types/Links';

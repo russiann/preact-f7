@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 import { pick } from 'lodash';
 import { getInstance } from '../../instance';
 
@@ -14,7 +14,6 @@ const validIconProps = ['icon', 'f7', 'material', 'fa', 'ion', 'name', 'badge', 
 
 
 const getIconConfiguration = ({ ...props, ifIos, ifMaterial, size, color, link, navbarIcon, badge, fill}) => {
-
   const { theme: currentTheme } = getInstance();
   const styleProps = { size, color, link, navbarIcon, badge, fill };
 

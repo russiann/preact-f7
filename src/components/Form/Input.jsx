@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 import InputText from './Inputs/InputText';
 import Select from './Inputs/Select';
 import Range from './Inputs/Range';

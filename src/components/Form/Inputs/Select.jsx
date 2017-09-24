@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 // import { createClassName } from 'create-classname';
 // const badgeClass = createClassName('badge', [{ name: 'color', className: ({ color }) => `color-${color}` }]);
 

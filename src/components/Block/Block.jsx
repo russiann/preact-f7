@@ -1,6 +1,7 @@
-import React from 'react';
+import { h } from 'preact';
 import PropTypes from 'prop-types';
 import { createClassName } from 'create-classname';
+import {Block} from '../index';
 
 const blockClass = createClassName('block', [
   'inset',
@@ -23,9 +24,8 @@ const BlockTitle = ({ title, children, style, className }) => (
   </div>
 );
 
-
 export const Block = ({ children, text, style, title, header, footer, className, ...props }) => (
-  <Choose >
+  <Choose>
     <When condition={title}>
       <BlockTitle title={title} children={children} style={style} className={className} />
     </When>
@@ -42,8 +42,6 @@ export const Block = ({ children, text, style, title, header, footer, className,
     </Otherwise>
   </Choose>
 );
-
-
 
 Block.propTypes = {
   title: PropTypes.any,
