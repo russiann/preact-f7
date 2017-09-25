@@ -6,7 +6,7 @@ const blockFooter = createClassName('block-footer');
 
 export const BlockFooter = ({ children, text, style, className }) => (
   <div className={blockFooter({className})} style={style} >
-    {children || text}
+    {text || children}
   </div>
 );
 

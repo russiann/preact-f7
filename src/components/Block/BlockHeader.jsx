@@ -6,7 +6,7 @@ const blockHeader = createClassName('block-header');
 
 export const BlockHeader = ({ children, text, style, className }) => (
   <div className={blockHeader({className})} style={style} >
-    {children || text}
+    {text || children}
   </div>
 );
 
