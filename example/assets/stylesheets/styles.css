@@ -446,3 +446,15 @@ code {
   margin-bottom: 15px;
   font-size: 12px;
 }
+
+.preloader-big {
+  width: 42px;
+  height: 42px;
+}
+.demo-preloaders .col-25 {
+  padding: 5px;
+  line-height: 42px;
+}
+.demo-black-col {
+  background: #000;
+}

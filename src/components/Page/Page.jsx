@@ -34,7 +34,6 @@ class Page extends Component {
 
   }
   render() {   
-    console.log('hasTabs',this.state.hasTabs)
     return (
       <div className={pageClass(this.props)}>
         {this.props.children.map(child => {

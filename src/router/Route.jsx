@@ -1,5 +1,6 @@
 import { h, Component, render } from 'preact';
 import { createRouteConfiguration } from './';
+import { getInstance } from '../instance';
 import F7Page from './F7Page';
 
 /**
@@ -28,6 +29,9 @@ class Route extends Component {
       component: {
         template: () => {
           return node = render(<F7Page name={component.name} children={h(component)} />);
+        },
+        mounted() {
+          fixes.fixPreloaders(this);
         },
         destroyed: () => {
           unrender(node);
@@ -81,6 +85,12 @@ const fixes = {
         }
       }
     })
+  },
+  fixPreloaders: (page) => {
+    const instance = getInstance();
+    page.$el.find('.preloader').each((index, preloaderEl) => {
+      instance.preloader.init(preloaderEl);
+    });
   }
 }
 
