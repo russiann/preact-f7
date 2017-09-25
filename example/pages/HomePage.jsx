@@ -39,7 +39,7 @@ const HomePage = () => (
       <ListItem link="/list" text="List View" />
       <ListItem link="/login-screen" text="Login Screen" badge="TODO" />
       <ListItem link="/messages" text="Messages" />
-      <ListItem link="/navbar" text="Navbar" badge="TODO" />
+      <ListItem link="/navbar" text="Navbar" />
       <ListItem link="/notifications" text="Notifications" badge="TODO" />
       <ListItem link="/panel" text="Panels / Side Panels" badge="TODO" />
       <ListItem link="/picker" text="Picker" badge="TODO" />

@@ -66,7 +66,7 @@ export default class App extends Component {
 						{/* <Route path="/login-screen" component={LoginScreenPage} /> */}
 						<Route path="/messages" component={MessagesPage} />
 						<Route path="/navbar" component={NavbarsPage} />
-						<Route path="/navbar-hide-scroll" component={HideNavbarOnScrollPage} />
+						<Route path="/hide-navbars-on-scroll" component={HideNavbarOnScrollPage} />
 						{/* <Route path="/notifications" component={NotificationsPage} />
 						<Route path="/panel" component={PanelsPage} />
 						<Route path="/picker" component={PickerPage} />
