@@ -24,10 +24,10 @@ class SubNavbarsContainer extends Component {
         </Toolbar>
     
         <List links>
-          <ListItem text="Tabbar" link="/subnavbar-title"/>
-          <ListItem text="Tabbar With Labels" link="/subnavbar-title"/>
-          <ListItem text="Tabbar Scrollable" link="/subnavbar-title"/>
-          <ListItem text="Hide Toolbar On Scroll" link="/subnavbar-title"/>
+          <ListItem text="Tabbar" link="/tabbar"/>
+          <ListItem text="Tabbar With Labels" link="/tabbar-labels"/>
+          <ListItem text="Tabbar Scrollable" link="/tabbar-scrollable"/>
+          <ListItem text="Hide Toolbar On Scroll" link="/tabbar-hide-on-scroll"/>
         </List>
       
         <Block title="Toolbar Position" className="md-only"/>

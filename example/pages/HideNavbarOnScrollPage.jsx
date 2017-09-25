@@ -3,7 +3,7 @@ import { Page, Navbar, Block } from '../../dist/preact-f7';
 
 export default () => (
   <Page hideNavbarOnScroll>
-    <Navbar title="Navbar" subtitle="Subtitle" right="Right" />
+    <Navbar title="Hide Navbar On Scroll"/>
     <Block strong>
       <p>Navbar will be hidden if you scroll bottom</p>
     </Block>

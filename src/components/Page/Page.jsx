@@ -10,13 +10,17 @@ const pageClass = createClassName('page', [
 
 class Page extends Component {
 
+  state = {
+    hasTabs: false
+  }
+
   componentDidMount() {
     setTimeout(() => this.configurePage());
   }
 
   configurePage() {
     const instance = getInstance();
-    const { hideNavbarOnScroll /*, withSubnavbar*/ } = this.props;
+    const { hideNavbarOnScroll, hideToolbarOnScroll /*, withSubnavbar*/ } = this.props;
     const { $el } = this.context.getF7Page();
     instance.views.current.router.removeThemeElements($el)
 
@@ -24,9 +28,13 @@ class Page extends Component {
       instance.navbar.initHideNavbarOnScroll($el);
     }
 
+    if (hideToolbarOnScroll) {
+      instance.toolbar.initHideToolbarOnScroll($el);
+    }
+
   }
   render() {   
-
+    console.log('hasTabs',this.state.hasTabs)
     return (
       <div className={pageClass(this.props)}>
         {this.props.children.map(child => {
@@ -35,11 +43,24 @@ class Page extends Component {
         {this.props.children.map(child => {
           return (child && child.nodeName && ['Toolbar'].includes(child.nodeName.componentName)) ? child : null;
         })}
-        <div className='page-content'>
-          {this.props.children.map(child => {
-            return (child && child.nodeName && !['Navbar','Toolbar'].includes(child.nodeName.componentName)) ? child : null;
-          })}
-        </div>
+        {this.props.children.map(child => {
+          if (child && child.nodeName && ['Tabs'].includes(child.nodeName.componentName)) {
+            if (!this.state.hasTabs) {
+              console.log(this.state)
+              this.setState({hasTabs: true});
+            }
+            console.log(this.state)
+            return child;
+          }
+          return;
+        })}
+        <If condition={!this.state.hasTabs}>
+          <div className='page-content'>
+            {this.props.children.map(child => {
+              return (child && child.nodeName && !['Navbar','Toolbar'].includes(child.nodeName.componentName)) ? child : null;
+            })}
+          </div>
+        </If>
       </div>
     )
   }

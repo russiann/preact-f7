@@ -64,11 +64,10 @@ const HomePage = () => (
       <ListItem link="/timeline" text="Timeline" badge="TODO" />
       <ListItem link="/toast" text="Toast" />
       <ListItem link="/toggle" text="Toggle" badge="TODO" />
-      <ListItem link="/toolbar-tabbar" text="Toolbar & Tabbar" badge="TODO" />
-      <ListItem link="/toolbar-tabbar" text="Toolbar" badge="TODO" />
+      <ListItem link="/toolbar-tabbar" text="Toolbar & Tabbar" />
       <ListItem link="/virtual-list" text="VirtualList" badge="TODO" />
     </List>
-    <Block title>Themes</Block>
+    <Block title="Themes"/>
     <List links>
       <ListItem link="/?theme=ios" text="iOS Theme" badge="TODO" />
       <ListItem link="/?theme=md" text="Material (MD) Theme" badge="TODO" />

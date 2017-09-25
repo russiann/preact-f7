@@ -21,6 +21,10 @@ import NavbarsPage from './pages/NavbarsPage';
 import SubNavbarTitlePage from './pages/SubNavbarTitlePage';
 import SubNavbarsPage from './pages/SubNavbarsPage';
 import ToolbarsPage from './pages/ToolbarsPage';
+import TabbarPage from './pages/TabbarPage';
+import TabbarLabelsPage from './pages/TabbarLabelsPage';
+import TabbarScrollablePage from './pages/TabbarScrollablePage';
+import HideToolbarOnScrollPage from './pages/HideToolbarOnScrollPage';
 import HideNavbarOnScrollPage from './pages/HideNavbarOnScrollPage';
 import GridPage from './pages/GridPage';
 import InputsPage from './pages/InputsPage';
@@ -93,6 +97,10 @@ export default class App extends Component {
 						<Route path="/toast" component={ToastPage} />
 						{/* <Route path="/toggle" component={TogglePage} /> */}
 						<Route path="/toolbar-tabbar" component={ToolbarsPage} />
+						<Route path="/tabbar" component={TabbarPage} />
+						<Route path="/tabbar-labels" component={TabbarLabelsPage} />
+						<Route path="/tabbar-scrollable" component={TabbarScrollablePage} />
+						<Route path="/tabbar-hide-on-scroll" component={HideToolbarOnScrollPage} />
 						{/* <Route path="/virtual-list" component={VirtualListPage} /> */}
 					</Router>
 				</View>

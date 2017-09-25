@@ -10,7 +10,7 @@ import { createClassName } from 'create-classname';
 |--------------------------------------------------
 */
 
-const validIconProps = ['icon', 'f7', 'material', 'fa', 'ion', 'name', 'badge', 'fill'];
+const validIconProps = ['icon', 'f7', 'material', 'fa', 'ion', 'name'];
 
 
 const getIconConfiguration = ({ ...props, ifIos, ifMaterial, size, color, link, navbarIcon, badge, fill}) => {
@@ -25,7 +25,7 @@ const getIconConfiguration = ({ ...props, ifIos, ifMaterial, size, color, link, 
 
   return Object
     .keys(pick(props, validIconProps))
-    .reduce((type, curr) => props[curr] ? { type: curr, name: props[curr], size, color, link, navbarIcon } : type, {})
+    .reduce((type, curr) => props[curr] ? { type: curr, name: props[curr], size, color, link, navbarIcon, fill, badge } : type, {})
 };
 
 
