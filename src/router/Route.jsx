@@ -32,6 +32,7 @@ class Route extends Component {
         destroyed: () => {
           unrender(node);
           fixes.fixPreviousPageAfterSwipeBack();
+          fixes.fixSubnavbars();
         }
       },
       ...options
@@ -61,6 +62,22 @@ const fixes = {
           const index = classNames.indexOf('page-next');
           classNames.splice(index, 1);
           previouPage.className = classNames.join(' ');
+        }
+      }
+    })
+  },
+  fixSubnavbars: () => {
+    setTimeout(() => {
+      const previouPage = document.querySelector('.page-previous');
+      if (previouPage && previouPage.f7Page) {
+        const classNames = previouPage.className.split(' ');
+        const hasSubNavbar = previouPage.f7Page.$navbarEl.find('.subnavbar').length;
+        if (!hasSubNavbar) {
+          if (classNames.includes('page-with-subnavbar')) {
+            const index = classNames.indexOf('page-with-subnavbar');
+            classNames.splice(index, 1);
+            previouPage.className = classNames.join(' ');
+          }
         }
       }
     })
