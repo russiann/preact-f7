@@ -1,5 +1,5 @@
 import { h, Component } from 'preact';
-import { Page, Navbar, Button, Block, Toast, Segmented, Icon } from '../../dist/preact-f7';
+import { Page, Navbar, Button, Block, Toast, Segmented, Icon, toast } from '../../dist/preact-f7';
 
 export default class ToastPage extends Component{
 
@@ -24,6 +24,14 @@ export default class ToastPage extends Component{
         <Block>
           <p>Toasts provide brief feedback about an operation through a message on the screen.</p>
           
+          <p>
+            <Button raised onClick={() => toast({
+              text: 'Toast on Top',
+              position: 'top',
+              closeTimeout: 1000,
+              on: { close: () => console.log('onClose') }
+            }).open()}> Toast on Top</Button>
+          </p>
           <p>
             <Button raised onClick={() => this.setState({ toastTop: true })}> Toast on Top</Button>
             <Toast 
@@ -53,6 +61,22 @@ export default class ToastPage extends Component{
               icon={<Icon ifIos="f7:star" ifMaterial="material:star" />}
               onClose={() => this.setState({ toastIcon: false })}
             />
+          </p>
+          <p>
+            <Button raised onClick={() => toast({
+              closeTimeout: 1000,
+              text: 'Complete',
+              position: 'center',
+              icon: <Icon ifIos="f7:star" ifMaterial="material:star" />
+            }).open()}>Toast with icon</Button>
+          </p>
+          <p>
+            <Button raised onClick={() => toast({
+              closeTimeout: 1000,
+              text: 'Complete',
+              position: 'center',
+              icon: '<i class="icon f7-icons">star</i>'
+            }).open()}>Toast with icon</Button>
           </p>
           <p>
             <Button raised onClick={() => this.setState({ toastLargeMessage: true })}>Toast with large message</Button>

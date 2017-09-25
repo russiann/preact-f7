@@ -32,6 +32,7 @@ import TablePage from './pages/TablePage';
 import RangeSliderPage from './pages/RangeSliderPage';
 import ToastPage from './pages/ToastPage';
 import PreloaderPage from './pages/PreloaderPage';
+import NotificationsPage from './pages/NotificationPage';
 
 const params = {
   view: { pushState: true }
@@ -72,8 +73,8 @@ export default class App extends Component {
 						<Route path="/messages" component={MessagesPage} />
 						<Route path="/navbar" component={NavbarsPage} />
 						<Route path="/hide-navbars-on-scroll" component={HideNavbarOnScrollPage} />
-						{/* <Route path="/notifications" component={NotificationsPage} />
-						<Route path="/panel" component={PanelsPage} />
+						<Route path="/notifications" component={NotificationsPage} />
+						{/* <Route path="/panel" component={PanelsPage} />
 						<Route path="/picker" component={PickerPage} />
 						<Route path="/photo-browser" component={PhotoBrowserPage} />
 						<Route path="/popup" component={PopupPage} />
