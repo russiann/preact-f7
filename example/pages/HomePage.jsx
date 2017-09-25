@@ -5,7 +5,7 @@ const HomePage = () => (
   <Page>
     <Navbar
       left={<Icon ifIos="material:list" ifMaterial="material:menu" navbarIcon />}
-      title="React F7"
+      title="Preact F7"
       disableBackButton
     />
     
