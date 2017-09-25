@@ -1,5 +1,5 @@
 import { h } from 'preact';
-import { Page, Navbar, Toolbar, Block, Tabs, Tab, TabLink, Icon, Badge } from '../../dist/preact-f7';
+import { Page, Navbar, Toolbar, Block, Tabs, Tab, TabLink, Icon, Badge, ShowWhen } from '../../dist/preact-f7';
 
 const Tabbar = () => (
   <Page>
@@ -7,16 +7,22 @@ const Tabbar = () => (
 
     <Toolbar tabbar labels>
       <TabLink label="Inbox" tabId="#tab-1" active >
-        <Icon f7="email" />
-        <Icon f7="email_fill" fill />
+        <Icon ifIos="f7:email" ifMaterial="material:email" />
+        <ShowWhen theme='ios'>
+          <Icon f7="email_fill" fill />
+        </ShowWhen>
       </TabLink>
       <TabLink label="Calendar" tabId="#tab-2" >
-        <Icon f7="today" badge={<Badge color='red'>5</Badge>} />
-        <Icon f7="today_fill" fill badge={<Badge color='red'>5</Badge>} />
+        <Icon ifIos="f7:today" ifMaterial="material:today" badge={<Badge color='red'>5</Badge>} />
+        <ShowWhen theme='ios'>
+          <Icon f7="today_fill" fill badge={<Badge color='red'>5</Badge>} />
+        </ShowWhen>
       </TabLink>
       <TabLink label="Upload" tabId="#tab-3" >
-        <Icon f7="cloud" />
-        <Icon f7="cloud_fill" fill />
+        <Icon ifIos="f7:cloud" ifMaterial="material:file_upload" />
+        <ShowWhen theme='ios'>
+          <Icon f7="cloud_fill" fill />
+        </ShowWhen>
       </TabLink>
     </Toolbar>
 
