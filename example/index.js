@@ -34,6 +34,8 @@ import ToastPage from './pages/ToastPage';
 import PreloaderPage from './pages/PreloaderPage';
 import NotificationsPage from './pages/NotificationPage';
 import SheetPage from './pages/SheetPage';
+import PullToRefreshPage from './pages/PullToRefreshPage';
+
 
 const params = {
   view: { pushState: true }
@@ -81,9 +83,9 @@ export default class App extends Component {
 						<Route path="/popup" component={PopupPage} />
 						<Route path="/popover" component={PopoverPage} /> */}
 						<Route path="/preloader" component={PreloaderPage} />
-						{/* <Route path="/progressbar" component={ProgressBarPage} />
+						{/* <Route path="/progressbar" component={ProgressBarPage} /> */}
 						<Route path="/pull-to-refresh" component={PullToRefreshPage} />
-						<Route path="/radio" component={RadioPage} /> */}
+						{/* <Route path="/radio" component={RadioPage} /> */}
 						<Route path="/range" component={RangeSliderPage} />
 						{/* <Route path="/searchbar" component={SearchbarPage} />
 						<Route path="/searchbar-expandable" component={SearchbarExpandablePage} /> */}

@@ -11,7 +11,8 @@ const pageClass = createClassName('page', [
 class Page extends Component {
 
   state = {
-    hasTabs: false
+    hasTabs: false,
+    hasPullToRefresh: false
   }
 
   componentDidMount() {
@@ -35,6 +36,7 @@ class Page extends Component {
   }
 
   render() {   
+
     return (
       <div className={pageClass(this.props)}>
         {this.props.children.map(child => {
@@ -52,14 +54,31 @@ class Page extends Component {
             console.log(this.state)
             return child;
           }
+
+          if(child && child.nodeName && ['PullToRefresh'].includes(child.nodeName.componentName)){
+            if(!this.state.hasPullToRefresh){
+              this.setState({ hasPullToRefresh: true });
+            }
+          }
           return;
         })}
         <If condition={!this.state.hasTabs}>
-          <div className='page-content'>
-            {this.props.children.map(child => {
-              return (child && child.nodeName && !['Navbar','Toolbar'].includes(child.nodeName.componentName)) ? child : null;
-            })}
-          </div>
+          <Choose>
+            <When condition={this.state.hasPullToRefresh}>
+              <div className="page-content ptr-content">
+                {this.props.children.map(child => {
+                  return (child && child.nodeName && !['Navbar','Toolbar'].includes(child.nodeName.componentName)) ? child : null;
+                })}
+              </div>
+            </When>
+            <Otherwise>
+              <div className='page-content'>
+                {this.props.children.map(child => {
+                  return (child && child.nodeName && !['Navbar','Toolbar'].includes(child.nodeName.componentName)) ? child : null;
+                })}
+              </div>
+            </Otherwise>
+          </Choose>
         </If>
         {this.props.children.map(child => {
           return (child && child.nodeName && ['SheetModal'].includes(child.nodeName.componentName)) ? child : null;
