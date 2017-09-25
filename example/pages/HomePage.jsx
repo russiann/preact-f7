@@ -46,7 +46,7 @@ const HomePage = () => (
       <ListItem link="/photo-browser" text="Photo Browser" badge="TODO" />
       <ListItem link="/popup" text="Popup" badge="TODO" />
       <ListItem link="/popover" text="Popover" badge="TODO" />
-      <ListItem link="/preloader" text="Preloader" badge="TODO" />
+      <ListItem link="/preloader" text="Preloader"  />
       <ListItem link="/progressbar" text="Progress Bar" badge="TODO" />
       <ListItem link="/pull-to-refresh" text="Pull To Refresh" badge="TODO" />
       <ListItem link="/radio" text="Radio" badge="TODO" />

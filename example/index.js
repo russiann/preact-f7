@@ -31,6 +31,7 @@ import InputsPage from './pages/InputsPage';
 import TablePage from './pages/TablePage';
 import RangeSliderPage from './pages/RangeSliderPage';
 import ToastPage from './pages/ToastPage';
+import PreloaderPage from './pages/PreloaderPage';
 
 const params = {
   view: { pushState: true }
@@ -76,9 +77,9 @@ export default class App extends Component {
 						<Route path="/picker" component={PickerPage} />
 						<Route path="/photo-browser" component={PhotoBrowserPage} />
 						<Route path="/popup" component={PopupPage} />
-						<Route path="/popover" component={PopoverPage} />
+						<Route path="/popover" component={PopoverPage} /> */}
 						<Route path="/preloader" component={PreloaderPage} />
-						<Route path="/progressbar" component={ProgressBarPage} />
+						{/* <Route path="/progressbar" component={ProgressBarPage} />
 						<Route path="/pull-to-refresh" component={PullToRefreshPage} />
 						<Route path="/radio" component={RadioPage} /> */}
 						<Route path="/range" component={RangeSliderPage} />

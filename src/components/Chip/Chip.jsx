@@ -10,7 +10,7 @@ const chipClass = createClassName('chip', [
 
 export const Chip = ({ children, onClickDelete, label, backgroundColorMedia, textColorMedia, ...props, style }) => (
   <div className={chipClass(props)} style={style}>
-    {children && <ChipMedia backgroundColor={backgroundColorMedia} color={textColorMedia} >{children}</ChipMedia>}
+    {children.length != 0 && <ChipMedia backgroundColor={backgroundColorMedia} color={textColorMedia} >{children}</ChipMedia>}
     <div className='chip-label'>{label}</div>
     {onClickDelete && <span className='chip-delete' onClick={onClickDelete} />}
   </div>

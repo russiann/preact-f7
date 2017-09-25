@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { createClassName } from 'create-classname';
 
 const gridColClass = createClassName('col', [
-  { name: 'width', className: ({ width }) => `col-${width}` },
+  { name: 'width', className: ({ width }) => `col-${width}`, overrideDefault: true },
   { name: 'tablet', className: ({ tablet }) => `tablet-${tablet}`}
 ]);
 

@@ -18,7 +18,6 @@ export class ActionSheet extends Component {
   renderToString(element) {
     if (typeof element === 'string') return element;
     return render(element);
-    // return ReactDOMServer.renderToString(element);
   }
 
   configure(children) {

@@ -24,33 +24,12 @@ export default class ToastPage extends Component{
         <Block>
           <p>Toasts provide brief feedback about an operation through a message on the screen.</p>
           
-          <Segmented>
-            <Button raised onClick={() => this.setState({ toastBottom: true })}>Show Toast</Button>
-            <Button raised onClick={() => this.setState({ toastBottom: false })}>Hide Toast</Button>
-          </Segmented>
-          <Toast 
-            active={this.state.toastBottom} 
-            message='Toast on Bottom' 
-          />
-          
-          
-          <Segmented>
-            <Button raised onClick={() => this.setState({ toastBottom: true })}>Show Toast</Button>
-            <Button raised onClick={() => this.setState({ toastBottom: false })}>Hide Toast</Button>
-          </Segmented>
-          <Toast 
-            active={this.state.toastBottom} 
-            position='bottom' 
-            message='Toast on Bottom' 
-          />
-          
           <p>
             <Button raised onClick={() => this.setState({ toastTop: true })}> Toast on Top</Button>
             <Toast 
               active={this.state.toastTop} 
               position='top' 
               message='Toast on Top' 
-              time={1000} 
               onClose={() => this.setState({ toastTop: false })}
             />
           </p>

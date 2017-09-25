@@ -91,3 +91,6 @@ export { MessageBar, MessageBarLeft, MessageBarRight } from './Messages/MessageB
 export { Tab } from './Tabs/Tab';
 export { Tabs } from './Tabs/Tabs';
 export { TabLink } from './Tabs/TabLink';
+
+//Toast
+export { Toast } from './Toast/Toast';
