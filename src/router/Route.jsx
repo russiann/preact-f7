@@ -29,7 +29,10 @@ class Route extends Component {
         template: () => {
           return node = render(<F7Page name={component.name} children={h(component)} />);
         },
-        destroyed: () => unrender(node)
+        destroyed: () => {
+          unrender(node);
+          fixes.fixPreviousPageAfterSwipeBack();
+        }
       },
       ...options
     };
@@ -39,6 +42,28 @@ class Route extends Component {
 
   render() {
     return null
+  }
+}
+
+/**
+|--------------------------------------------------
+| Fixes
+|--------------------------------------------------
+*/
+
+const fixes = {
+  fixPreviousPageAfterSwipeBack: () => {
+    setTimeout(() => {
+      const previouPage = document.querySelector('.page-previous');
+      if (previouPage) {
+        const classNames = previouPage.className.split(' ');
+        if (classNames.includes('page-next')) {
+          const index = classNames.indexOf('page-next');
+          classNames.splice(index, 1);
+          previouPage.className = classNames.join(' ');
+        }
+      }
+    })
   }
 }
 
