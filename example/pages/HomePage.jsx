@@ -33,7 +33,7 @@ const HomePage = () => (
       <ListItem link="/form-storage" text="Form Storage" badge="TODO" />
       <ListItem link="/icons" text="Icons" badge="TODO" />
       <ListItem link="/infinite-scroll" text="Infinite Scroll" badge="TODO" />
-      <ListItem link="/inputs" text="Inputs" badge="TODO" />
+      <ListItem link="/inputs" text="Inputs" />
       <ListItem link="/grid" text="Grid / Layout Grid" />
       <ListItem link="/lazy-load" text="Lazy Load" badge="TODO" />
       <ListItem link="/list" text="List View" badge="TODO" />
