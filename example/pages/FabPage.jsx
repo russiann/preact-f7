@@ -71,6 +71,7 @@ export default () => (
         <FabItem>1</FabItem>
         <FabItem>2</FabItem>
         <FabItem>3</FabItem>
+        <FabItem>4</FabItem>
       </FabButtons>
     </Fab>
     <div className="page-content">

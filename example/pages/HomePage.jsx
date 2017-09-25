@@ -28,7 +28,7 @@ const HomePage = () => (
       <ListItem link="/content-block" text="Content Block" />
       <ListItem link="/data-table" text="Data Table" badge="TODO" />
       <ListItem link="/dialog" text="Dialog" badge="TODO" />
-      <ListItem link="/fab" text="FAB" badge="TODO" />
+      <ListItem link="/fab" text="FAB" />
       <ListItem link="/fab-morph" text="FAB Morph" badge="TODO" />
       <ListItem link="/form-storage" text="Form Storage" badge="TODO" />
       <ListItem link="/icons" text="Icons" badge="TODO" />
