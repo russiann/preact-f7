@@ -1,11 +1,14 @@
 import { h } from 'preact';
 import PropTypes from 'prop-types';
-// import { createClassName } from 'create-classname';
+import { createClassName } from 'create-classname';
 
-// const badgeClass = createClassName('badge', [{ name: 'color', className: ({ color }) => `color-${color}` }]);
+const formClass = createClassName('list no-hairlines-md', [
+  'inlineLabels:inline-labels',
+  'inset',
+]);
 
-export const Form = ({ children }) => (
-  <div className="list inline-labels no-hairlines-md" >
+export const Form = ({ children, ...props }) => (
+  <div className={formClass(props)} >
     <ul>
       {children}
     </ul>

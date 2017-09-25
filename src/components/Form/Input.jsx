@@ -2,6 +2,7 @@ import { h } from 'preact';
 import InputText from './Inputs/InputText';
 import Select from './Inputs/Select';
 import Range from './Inputs/Range';
+import TextArea from './Inputs/TextArea';
 // import { createClassName } from 'create-classname';
 
 // const badgeClass = createClassName('badge', [{ name: 'color', className: ({ color }) => `color-${color}` }]);
@@ -17,6 +18,9 @@ export const Input = (props) => (
     </When>
     <When condition={props.type === 'range'} >
       <Range {...props} />
+    </When>
+    <When condition={props.type === 'textarea'} >
+      <TextArea {...props} />
     </When>
   </Choose>
 );
