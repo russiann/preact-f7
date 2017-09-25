@@ -28,7 +28,7 @@ class Route extends Component {
       path,
       component: {
         template: () => {
-          return node = render(<F7Page name={component.name} children={h(component)} />);
+          return node = render(<F7Page store={this.context.store} name={component.name} children={h(component)} />);
         },
         mounted() {
           fixes.fixPreloaders(this);

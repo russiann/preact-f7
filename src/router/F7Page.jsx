@@ -9,7 +9,8 @@ export default class F7Page extends Component {
   
   getChildContext() {
     return {
-      getF7Page: getF7Page(this)
+      getF7Page: getF7Page(this),
+      store: this.props.store
     };
   }
 
