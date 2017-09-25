@@ -30,17 +30,14 @@ class Page extends Component {
     return (
       <div className='page'>
         {this.props.children.map(child => {
-          if (child && child.nodeName && child.nodeName.name === 'Navbar') return child;
-          return;
+          return (child && child.nodeName && ['Navbar'].includes(child.nodeName.componentName)) ? child : null;
         })}
         {this.props.children.map(child => {
-          if (child && child.nodeName && child.nodeName.name === 'Toolbar') return child;
-          return;
+          return (child && child.nodeName && ['Toolbar'].includes(child.nodeName.componentName)) ? child : null;
         })}
         <div className='page-content'>
           {this.props.children.map(child => {
-            if (child && child.nodeName && child.nodeName.name !== 'Navbar' && child.nodeName.name !== 'Toolbar') return child;
-            return;
+            return (child && child.nodeName && !['Navbar','Toolbar'].includes(child.nodeName.componentName)) ? child : null;
           })}
         </div>
       </div>

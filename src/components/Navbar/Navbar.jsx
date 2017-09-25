@@ -39,5 +39,7 @@ const Navbar = ({children, title, subtitle, left, right, disableBackButton}) => 
   </div>
 );
 
+Navbar.componentName = "Navbar";
+
 export { Navbar };
 

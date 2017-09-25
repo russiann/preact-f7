@@ -11,5 +11,7 @@ const Toolbar = ({children, ...props}) => (
   </div>
 );
 
+Toolbar.componentName = "Toolbar";
+
 export { Toolbar };
 
