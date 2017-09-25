@@ -80,6 +80,7 @@
   "dependencies": {
     "create-classname": "^1.0.15",
     "lodash": "^4.17.4",
+    "preact-render-to-string": "^3.6.3",
     "prop-types": "^15.5.10"
   }
 }

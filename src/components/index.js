@@ -78,3 +78,6 @@ export { ListGroup } from './List/ListGroup';
 export { Form } from './Form/Form';
 export { Input } from './Form/Input';
 export { Select } from './Form/Inputs/Select';
+
+// Action Sheet
+export { ActionSheet, ActionButton, ActionGroup } from './ActionSheet/ActionSheet';
