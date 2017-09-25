@@ -95,3 +95,7 @@ export { TabLink } from './Tabs/TabLink';
 //Toast
 export { Toast } from './Toast/Toast';
 
+// ShowWhen
+
+export { ShowWhen } from './ShowWhen/ShowWhen';
+

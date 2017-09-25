@@ -1,5 +1,5 @@
 import { h, Component } from 'preact';
-import { Page, Navbar, List, ListItem, Block, Toolbar, Button } from '../../dist/preact-f7';
+import { Page, Navbar, List, ListItem, Block, Toolbar, Button, ShowWhen } from '../../dist/preact-f7';
 
 class SubNavbarsContainer extends Component {
   state = {
@@ -31,12 +31,14 @@ class SubNavbarsContainer extends Component {
         </List>
       
         <Block title="Toolbar Position" className="md-only"/>
-        <Block className="md-only">
-          <p>Material (MD) theme toolbar supports both top and bottom positions. Click the following button to change its position.</p>
-          <p>
-            <Button onClick={this.toggleToolbarPosition} title="TOGGLE TOOLBAR POSITION" raised />
-          </p>
-        </Block>
+        <ShowWhen theme="md">
+          <Block>
+            <p>Material (MD) theme toolbar supports both top and bottom positions. Click the following button to change its position.</p>
+            <p>
+              <Button onClick={this.toggleToolbarPosition} title="TOGGLE TOOLBAR POSITION" raised />
+            </p>
+          </Block>
+        </ShowWhen>
     
       </Page>
     )
