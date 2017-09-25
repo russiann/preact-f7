@@ -36,7 +36,7 @@ const HomePage = () => (
       <ListItem link="/inputs" text="Inputs" />
       <ListItem link="/grid" text="Grid / Layout Grid" />
       <ListItem link="/lazy-load" text="Lazy Load" badge="TODO" />
-      <ListItem link="/list" text="List View" badge="TODO" />
+      <ListItem link="/list" text="List View" />
       <ListItem link="/login-screen" text="Login Screen" badge="TODO" />
       <ListItem link="/messages" text="Messages" />
       <ListItem link="/navbar" text="Navbar" badge="TODO" />
