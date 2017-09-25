@@ -85,7 +85,7 @@ export { ActionSheet, ActionButton, ActionGroup } from './ActionSheet/ActionShee
 // Messages
 export { Messages } from './Messages/Messages';
 export { Message } from './Messages/Message';
-export { MessageBar } from './Messages/MessageBar';
+export { MessageBar, MessageBarLeft, MessageBarRight } from './Messages/MessageBar';
 
 // Tabs
 export { Tab } from './Tabs/Tab';

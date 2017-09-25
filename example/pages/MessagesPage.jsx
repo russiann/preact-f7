@@ -1,5 +1,5 @@
 import { h, Component } from 'preact';
-import { Page, Navbar, MessageBar, Messages, Message } from '../../dist/preact-f7';
+import { Block, Page, Navbar, MessageBar, MessageBarLeft, MessageBarRight, Messages, Message } from '../../dist/preact-f7';
 
 export default class MessagesPage extends Component {
   date = (new Date()).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' });
@@ -43,15 +43,34 @@ export default class MessagesPage extends Component {
     }]
   };
 
+  camera() {
+    console.log('open gallery');
+  }
+
+  send() {
+    console.log(this.input.value);
+    this.setState({ messages: [...this.state.messages, { user: this.actualUser, text: this.input.value }] });
+    this.input.value = '';
+  }
+
   render() {
     return (
       <Page messages>
         <Navbar title="Messsages" />
-        <MessageBar
-          placeholder='Message'
-          onCameraClick={() => console.log('open gallery')}
-          onSendClick={(text) => this.setState({ messages: [...this.state.messages, { user: this.actualUser, text }] })}
-        />
+        <MessageBar onInit={(input) => this.input = input} placeholder='Message'>
+          <MessageBarLeft>
+            <a className="link icon-only" onClick={this.camera}>
+              <i className="icon f7-icons ios-only">camera_fill</i>
+              <i className="icon material-icons md-only">camera_alt</i>
+            </a>
+          </MessageBarLeft>
+          <MessageBarRight>
+            <a className="link icon-only" onClick={this.send.bind(this)}>
+              <i className="icon f7-icons ios-only">arrow_up_fill</i>
+              <i className="icon material-icons md-only">send</i>
+            </a>
+          </MessageBarRight>
+        </MessageBar>
         <Messages messagebar title={this.date}>
           <For each='message' of={this.state.messages}>
             <Message

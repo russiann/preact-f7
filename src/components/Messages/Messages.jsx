@@ -7,10 +7,9 @@ import { getInstance } from '../../instance.js';
 const messagesClass = createClassName('messages');
 
 export class Messages extends Component {
-  constructor({ children, messagebar, title, style, ...restProps }) {
+  constructor({ messagebar, title, style, ...restProps }) {
     super();
 
-    this.children = children;
     this.messagebarProp = messagebar;
     this.title = title;
     this.style = style;
@@ -58,7 +57,7 @@ export class Messages extends Component {
         <div className='messages-title'>
           <b>{this.title}</b>
         </div>
-        {this.children}
+        {this.props.children}
       </div>
     );
   }
