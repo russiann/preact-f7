@@ -57,7 +57,7 @@ const HomePage = () => (
       <ListItem link="/smart-select" text="Smart Select" badge="TODO" />
       <ListItem link="/sortable" text="Sortable List" badge="TODO" />
       <ListItem link="/statusbar" text="Statusbar" badge="TODO" />
-      <ListItem link="/subnavbar" text="Subnavbar" badge="TODO" />
+      <ListItem link="/subnavbar" text="Subnavbar" />
       <ListItem link="/swipeout" text="Swipeout (Swipe To Delete)" badge="TODO" />
       <ListItem link="/swiper" text="Swiper Slider" badge="TODO" />
       <ListItem link="/tabs" text="Tabs" badge="TODO" />

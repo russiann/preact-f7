@@ -28,7 +28,7 @@ class Page extends Component {
   render() {   
 
     return (
-      <div className='page'>
+      <div className={pageClass(this.props)}>
         {this.props.children.map(child => {
           return (child && child.nodeName && ['Navbar'].includes(child.nodeName.componentName)) ? child : null;
         })}
