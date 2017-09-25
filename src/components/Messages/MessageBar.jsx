@@ -19,9 +19,11 @@ export class MessageBar extends Component {
   }
 
   send() {
-    this.onSendClick(this.textInput.value);
-    this.instance.messages.get('.messages').addMessages([{ text: this.textInput.value }]);
-    this.textInput.value = '';
+    if(this.textInput.value) {
+      this.onSendClick(this.textInput.value);
+      this.instance.messages.get('.messages').addMessages([{ text: this.textInput.value }]);
+      this.textInput.value = '';
+    }
   }
 
   render() {
