@@ -35,7 +35,7 @@ import PreloaderPage from './pages/PreloaderPage';
 import NotificationsPage from './pages/NotificationPage';
 import SheetPage from './pages/SheetPage';
 import PullToRefreshPage from './pages/PullToRefreshPage';
-import InfiniteScrollPage from './pages/InfiniteScrolPage';
+import InfiniteScrollPage from './pages/InfiniteScrollPage';
 
 
 const params = {

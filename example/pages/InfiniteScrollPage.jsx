@@ -21,7 +21,7 @@ export default class InfiniteScrollPage extends Component {
     let last = 0;
     if(items.length) last = items[items.length - 1];
 
-    for(let i = 0; i < qtdItens; i++)
+    for(let i = 0; i < qtdItems; i++)
       items.push(last + i);
 
     this.setState({ items })
