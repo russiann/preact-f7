@@ -9,6 +9,7 @@ export default class PullToRefreshPage extends Component {
       <Page>
         <Navbar title='Pull To Refresh' />
         <PullToRefresh 
+          distance={50}
           onRefresh={(done) => {
             console.log('onRefresh');
             setTimeout(done, 1000);

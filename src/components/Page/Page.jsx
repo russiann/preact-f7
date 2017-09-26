@@ -66,14 +66,14 @@ class Page extends Component {
           if(child && child.nodeName && ['PullToRefresh'].includes(child.nodeName.componentName)){
             if(!this.pageContent.pullToRefresh){
               this.pageContent.pullToRefresh = true;
-              this.propsPageContent = { 'data-infinite-distance': child.attributes.distance || 1 };
+              this.propsPageContent = { 'data-infinite-distance': child.attributes.distance || 50 };
             }
           }
 
           if(child && child.nodeName && ['InfiniteScroll'].includes(child.nodeName.componentName)){
             if(!this.pageContent.infiniteScroll){
               this.pageContent.infiniteScroll = true;
-              this.propsPageContent = { 'data-infinite-distance': child.attributes.distance || 1 };
+              this.propsPageContent = { 'data-infinite-distance': child.attributes.distance || 50 };
             }
           }
           return;

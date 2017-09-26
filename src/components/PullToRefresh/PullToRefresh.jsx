@@ -7,44 +7,42 @@ export class PullToRefresh extends Component {
   
   instance = getInstance();
 
-  initPullToRefresh = () => {
+  initPullToRefresh = ($element) => {
     setTimeout(() => {
-      const currentPageContent = this.instance.views.current.$el.find('.page-current .ptr-content');
-      if(currentPageContent.length === 0)
-        throw new Error('TypeError: there is no .ptr-content in the current page');
-
-      const $pullToRefresh = this.instance.ptr.create(currentPageContent);
-    
-      const { 
-        onRefresh = function(){},
-        onDone = function(){},
-        onBeforeDestroy = function(){},
-        onPullMove = function(){},
-        onPullEnd = function(){},
-        onPullStart = function(){},
-      } = this.props;
-
-      $pullToRefresh.on('refresh', (element, done) => onRefresh(done));
-      $pullToRefresh.on('done', onDone);
-      $pullToRefresh.on('beforeDestroy', onBeforeDestroy);
-      $pullToRefresh.on('pullMove', onPullMove);
-      $pullToRefresh.on('pullEnd', onPullEnd);
-      $pullToRefresh.on('pullStart', onPullStart);
+      if($element && $element.parentElement) {
+        if($element.parentElement.classList.contains('ptr-content')) {
+          const $pullToRefresh = this.instance.ptr.create($element.parentElement);
+          
+          this.configureEvents($pullToRefresh, this.props);
+        } else {
+          throw new Error('TypeError: there is no .ptr-content in the current page');
+        }
+      }    
     });
   }
 
-  componentDidMount(){
-    this.initPullToRefresh();
+  configureEvents($pullToRefresh, props) {
+    const setEvent = (eventName, callback) => {
+      if(callback) $pullToRefresh.on(eventName, callback);
+    };
+
+    const {  onRefresh, onDone, onBeforeDestroy, onPullMove, onPullEnd, onPullStart } = props;
+    
+    setEvent('refresh', (element, done) => onRefresh(done));
+    setEvent('done', onDone);
+    setEvent('beforeDestroy', onBeforeDestroy);
+    setEvent('pullMove', onPullMove);
+    setEvent('pullEnd', onPullEnd);
+    setEvent('pullStart', onPullStart);
   }
 
-  render(){
-    return (  
-      <div className="ptr-preloader">
-        <div className="preloader"></div>
-        <div className="ptr-arrow"></div>
-      </div>
-    );
-  }
+  render = () => (  
+    <div className="ptr-preloader" ref={this.initPullToRefresh}>
+      <div className="preloader"></div>
+      <div className="ptr-arrow"></div>
+    </div>
+  );
+  
 }
 
 PullToRefresh.componentName = "PullToRefresh";
