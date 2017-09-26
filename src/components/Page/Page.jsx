@@ -33,6 +33,7 @@ class Page extends Component {
     }
 
   }
+
   render() {   
     return (
       <div className={pageClass(this.props)}>
@@ -60,6 +61,9 @@ class Page extends Component {
             })}
           </div>
         </If>
+        {this.props.children.map(child => {
+          return (child && child.nodeName && ['SheetModal'].includes(child.nodeName.componentName)) ? child : null;
+        })}
       </div>
     )
   }

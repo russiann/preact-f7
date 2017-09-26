@@ -33,6 +33,7 @@ import RangeSliderPage from './pages/RangeSliderPage';
 import ToastPage from './pages/ToastPage';
 import PreloaderPage from './pages/PreloaderPage';
 import NotificationsPage from './pages/NotificationPage';
+import SheetPage from './pages/SheetPage';
 
 const params = {
   view: { pushState: true }
@@ -85,9 +86,9 @@ export default class App extends Component {
 						<Route path="/radio" component={RadioPage} /> */}
 						<Route path="/range" component={RangeSliderPage} />
 						{/* <Route path="/searchbar" component={SearchbarPage} />
-						<Route path="/searchbar-expandable" component={SearchbarExpandablePage} />
-						<Route path="/sheet-modal" component={SheetModalPage} />
-						<Route path="/smart-select" component={SmartSelectPage} />
+						<Route path="/searchbar-expandable" component={SearchbarExpandablePage} /> */}
+						<Route path="/sheet-modal" component={SheetPage} />
+						{/* <Route path="/smart-select" component={SmartSelectPage} />
 						<Route path="/sortable" component={SortableListPage} />
 						<Route path="/statusbar" component={StatusbarPage} /> */}
 						<Route path="/subnavbar" component={SubNavbarsPage} />

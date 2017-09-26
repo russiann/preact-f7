@@ -13,9 +13,9 @@ import { createClassName } from 'create-classname';
 const validIconProps = ['icon', 'f7', 'material', 'fa', 'ion', 'name'];
 
 
-const getIconConfiguration = ({ ...props, ifIos, ifMaterial, size, color, link, navbarIcon, badge, fill}) => {
+const getIconConfiguration = ({ ...props, ifIos, ifMaterial, size, color, link, navbarIcon, badge, fill, closeSheet }) => {
   const { theme: currentTheme } = getInstance();
-  const styleProps = { size, color, link, navbarIcon, badge, fill };
+  const styleProps = { size, color, link, navbarIcon, badge, fill, closeSheet };
 
   if (currentTheme === 'ios' && typeof ifIos === 'string')
     return getConditionalIconConfiguration(ifIos, styleProps);
@@ -25,7 +25,7 @@ const getIconConfiguration = ({ ...props, ifIos, ifMaterial, size, color, link, 
 
   return Object
     .keys(pick(props, validIconProps))
-    .reduce((type, curr) => props[curr] ? { type: curr, name: props[curr], size, color, link, navbarIcon, fill, badge } : type, {})
+    .reduce((type, curr) => props[curr] ? { type: curr, name: props[curr], size, color, link, navbarIcon, fill, badge, closeSheet } : type, {})
 };
 
 
@@ -42,7 +42,7 @@ const getConditionalIconConfiguration = (text, styleProps) => {
 
 const hashtag = '#'; // avoid lint error
 
-const icon = createClassName('icon', ['fill:icon-fill', { name: 'color', className: ({ color }) => `color-${color}` }]);
+const icon = createClassName('icon', ['fill:icon-fill', 'closeSheet:sheet-close', { name: 'color', className: ({ color }) => `color-${color}` }]);
 
 const I = ({...props, size, children, link, navbarIcon, badge}) => (
   <Choose>

@@ -96,6 +96,8 @@ export { TabLink } from './Tabs/TabLink';
 export { Toast } from './Toast/Toast';
 
 // ShowWhen
-
 export { ShowWhen } from './ShowWhen/ShowWhen';
 
+// Sheet
+export { Sheet } from './Sheet/Sheet';
+export { SheetToolbar } from './Sheet/SheetToolbar';
