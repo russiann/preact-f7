@@ -53,7 +53,7 @@ const HomePage = () => (
       <ListItem link="/range" text="Range Slider" badge="TODO"/>
       <ListItem link="/searchbar" text="Searchbar" badge="TODO" />
       <ListItem link="/searchbar-expandable" text="Searchbar Expandable" badge="TODO" />
-      <ListItem link="/sheet-modal" text="Sheet Modal" badge="TODO" />
+      <ListItem link="/sheet-modal" text="Sheet Modal" />
       <ListItem link="/smart-select" text="Smart Select" badge="TODO" />
       <ListItem link="/sortable" text="Sortable List" badge="TODO" />
       <ListItem link="/statusbar" text="Statusbar" badge="TODO" />
