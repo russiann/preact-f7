@@ -16,15 +16,17 @@ export default class InfiniteScrollPage extends Component {
   }
 
   addItens = () => {
-    const qtdItems = 15; 
-    const { items } = this.state;
-    let last = 0;
-    if(items.length) last = items[items.length - 1];
-
-    for(let i = 0; i < qtdItems; i++)
-      items.push(last + i);
-
-    this.setState({ items })
+    setTimeout(() => {
+      const qtdItems = 15; 
+      const { items } = this.state;
+      let last = 0;
+      if(items.length) last = items[items.length - 1];
+  
+      for(let i = 0; i < qtdItems; i++)
+        items.push(last + i);
+  
+      this.setState({ items })
+    }, 500);
   }
 
   render() {
@@ -35,7 +37,7 @@ export default class InfiniteScrollPage extends Component {
         <List simple>
           {this.state.items.map((number) => <ListItem>Item {number}</ListItem>)}
         </List>
-        <InfiniteScroll distance={2} onInfinite={() => {
+        <InfiniteScroll distance={1} color='blue' onInfinite={() => {
           this.addItens();
           console.log('OnInfinite');
         }} />
