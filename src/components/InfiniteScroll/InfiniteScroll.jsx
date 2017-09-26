@@ -9,8 +9,9 @@ export class InfiniteScroll extends Component {
       if($element && $element.parentElement) {
         if($element.parentElement.classList.contains('infinite-scroll-content')) {
           const $infiniteScroll = this.instance.$($element.parentElement);
-          const { onInfinite = function(){} } = this.props;
-          $infiniteScroll.on('infinite', onInfinite);
+          const { onInfinite } = this.props;
+          
+          if(onInfinite) $infiniteScroll.on('infinite', onInfinite);
         } else {
           throw new Error('TypeError: there is no .infinite-scroll-content in the current page');
         }
