@@ -104,3 +104,6 @@ export { SheetToolbar } from './Sheet/SheetToolbar';
 
 //PullToRefresh
 export { PullToRefresh } from './PullToRefresh/PullToRefresh';
+
+//InfiniteScroll
+export { InfiniteScroll } from './InfiniteScroll/InfiniteScroll';

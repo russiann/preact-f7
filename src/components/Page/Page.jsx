@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 import { getInstance } from '../../instance';
 import { createClassName } from 'create-classname';
 
+const pageContentClass = createClassName('page-content',[
+  'pullToRefresh:ptr-content',
+  'infiniteScroll:infinite-scroll-content'
+], false);
+
 const pageClass = createClassName('page', [
   'withSubnavbar:page-with-subnavbar',
 ]);
@@ -12,8 +17,10 @@ class Page extends Component {
 
   state = {
     hasTabs: false,
-    hasPullToRefresh: false
   }
+
+  pageContent = {};
+  propsPageContent = {};
 
   componentDidMount() {
     setTimeout(() => this.configurePage());
@@ -54,31 +61,29 @@ class Page extends Component {
             console.log(this.state)
             return child;
           }
-
+          
+          this.propsPageContent = {};
           if(child && child.nodeName && ['PullToRefresh'].includes(child.nodeName.componentName)){
-            if(!this.state.hasPullToRefresh){
-              this.setState({ hasPullToRefresh: true });
+            if(!this.pageContent.pullToRefresh){
+              this.pageContent.pullToRefresh = true;
+              this.propsPageContent = { 'data-infinite-distance': child.attributes.distance || 1 };
+            }
+          }
+
+          if(child && child.nodeName && ['InfiniteScroll'].includes(child.nodeName.componentName)){
+            if(!this.pageContent.infiniteScroll){
+              this.pageContent.infiniteScroll = true;
+              this.propsPageContent = { 'data-infinite-distance': child.attributes.distance || 1 };
             }
           }
           return;
         })}
         <If condition={!this.state.hasTabs}>
-          <Choose>
-            <When condition={this.state.hasPullToRefresh}>
-              <div className="page-content ptr-content">
-                {this.props.children.map(child => {
-                  return (child && child.nodeName && !['Navbar','Toolbar'].includes(child.nodeName.componentName)) ? child : null;
-                })}
-              </div>
-            </When>
-            <Otherwise>
-              <div className='page-content'>
-                {this.props.children.map(child => {
-                  return (child && child.nodeName && !['Navbar','Toolbar'].includes(child.nodeName.componentName)) ? child : null;
-                })}
-              </div>
-            </Otherwise>
-          </Choose>
+          <div className={pageContentClass(this.pageContent)} {...this.propsPageContent}>
+            {this.props.children.map(child => {
+              return (child && child.nodeName && !['Navbar','Toolbar'].includes(child.nodeName.componentName)) ? child : null;
+            })}
+          </div>
         </If>
         {this.props.children.map(child => {
           return (child && child.nodeName && ['SheetModal'].includes(child.nodeName.componentName)) ? child : null;

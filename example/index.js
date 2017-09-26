@@ -35,6 +35,7 @@ import PreloaderPage from './pages/PreloaderPage';
 import NotificationsPage from './pages/NotificationPage';
 import SheetPage from './pages/SheetPage';
 import PullToRefreshPage from './pages/PullToRefreshPage';
+import InfiniteScrollPage from './pages/InfiniteScrolPage';
 
 
 const params = {
@@ -66,9 +67,9 @@ export default class App extends Component {
 						<Route path="/inputs" component={InputsPage} />
 						{/* <Route path="/fab-morph" component={FABMorphPage} />
 						<Route path="/form-storage" component={FormStoragePage} />
-						<Route path="/icons" component={IconsPage} />
+						<Route path="/icons" component={IconsPage} /> */}
 						<Route path="/infinite-scroll" component={InfiniteScrollPage} />
-						<Route path="/inputs" component={InputsPage} /> */}
+						{/* <Route path="/inputs" component={InputsPage} /> */}
 						<Route path="/grid" component={GridPage} />
 						{/* <Route path="/lazy-load" component={LazyLoadPage} /> */}
 						<Route path="/list" component={ListsPage} />
