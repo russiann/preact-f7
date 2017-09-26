@@ -22,22 +22,38 @@ const unrender = (node) => {
 class Route extends Component {
   componentWillMount() {
     let node;
-    const { path, component, options } = this.props;
+    const { path, component, options, protected: _protected } = this.props;
     
     const route = {
       path,
-      component: {
-        template: () => {
-          return node = render(<F7Page store={this.context.store} name={component.name} children={h(component)} />);
-        },
-        mounted() {
-          fixes.fixPreloaders(this);
-        },
-        destroyed: () => {
-          unrender(node);
-          fixes.fixPreviousPageAfterSwipeBack();
-          fixes.fixSubnavbars();
+      async: (next) => {
+
+        const config = {
+          component: {
+            template: () => {
+              return node = render(<F7Page store={this.context.store} name={component.name} children={h(component)} />);
+            },
+            mounted() {
+              fixes.fixPreloaders(this);
+            },
+            destroyed: () => {
+              unrender(node);
+              fixes.fixPreviousPageAfterSwipeBack();
+              fixes.fixSubnavbars();
+            }
+          }
+        };
+
+        if (_protected === undefined) {
+          return next(config);
         }
+
+        Promise
+          .resolve()
+          .then(_protected)
+          .then(canKeepGoing => {
+            canKeepGoing ? next(config) : next({})
+          });
       },
       ...options
     };
