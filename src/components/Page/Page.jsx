@@ -29,17 +29,19 @@ class Page extends Component {
   configurePage() {
     const instance = getInstance();
     const { hideNavbarOnScroll, hideToolbarOnScroll /*, withSubnavbar*/ } = this.props;
-    const { $el } = this.context.getF7Page();
-    instance.views.current.router.removeThemeElements($el)
 
-    if (hideNavbarOnScroll) {
-      instance.navbar.initHideNavbarOnScroll($el);
+    if(this.context.getF7Page) {
+      const { $el } = this.context.getF7Page();
+      instance.views.current.router.removeThemeElements($el);
+
+      if (hideNavbarOnScroll) {
+        instance.navbar.initHideNavbarOnScroll($el);
+      }
+  
+      if (hideToolbarOnScroll) {
+        instance.toolbar.initHideToolbarOnScroll($el);
+      }
     }
-
-    if (hideToolbarOnScroll) {
-      instance.toolbar.initHideToolbarOnScroll($el);
-    }
-
   }
 
   render() {   
@@ -85,9 +87,6 @@ class Page extends Component {
             })}
           </div>
         </If>
-        {this.props.children.map(child => {
-          return (child && child.nodeName && ['SheetModal'].includes(child.nodeName.componentName)) ? child : null;
-        })}
       </div>
     )
   }

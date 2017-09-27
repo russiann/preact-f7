@@ -107,3 +107,6 @@ export { PullToRefresh } from './PullToRefresh/PullToRefresh';
 
 //InfiniteScroll
 export { InfiniteScroll } from './InfiniteScroll/InfiniteScroll';
+
+// Panel
+export { Panel } from './Panel/Panel';

@@ -49,6 +49,8 @@ export class Sheet extends Component {
   }
 }
 
+Sheet.componentName = 'Sheet';
+
 Sheet.propTypes = {
   active: PropTypes.bool,
   onClose: PropTypes.func

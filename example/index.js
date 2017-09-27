@@ -1,7 +1,7 @@
 import { h, Component } from 'preact';
 import 'framework7/dist/css/framework7.css';
 import F7 from 'framework7';
-import { Framework7, View, Router, Route, Navbar, Page } from '../dist/preact-f7';
+import { Framework7, View, Router, Route, Navbar, Page, Panel } from '../dist/preact-f7';
 
 import './assets/stylesheets/styles.css';
 
@@ -36,7 +36,7 @@ import NotificationsPage from './pages/NotificationPage';
 import SheetPage from './pages/SheetPage';
 import PullToRefreshPage from './pages/PullToRefreshPage';
 import InfiniteScrollPage from './pages/InfiniteScrollPage';
-
+import PanelPage, { LeftPanel, RightPanel } from './pages/PanelPage';
 
 const params = {
   view: { pushState: true }
@@ -46,6 +46,8 @@ export default class App extends Component {
 	render() {
 		return (
 			<Framework7 F7={F7} params={params}>
+				<Panel left cover component={<LeftPanel />} />
+				<Panel right reveal component={<RightPanel />} />
 				<View>
 					<Router>
 						<Route path="/" component={HomePage} />
@@ -78,8 +80,8 @@ export default class App extends Component {
 						<Route path="/navbar" component={NavbarsPage} />
 						<Route path="/hide-navbars-on-scroll" component={HideNavbarOnScrollPage} />
 						<Route path="/notifications" component={NotificationsPage} />
-						{/* <Route path="/panel" component={PanelsPage} />
-						<Route path="/picker" component={PickerPage} />
+						<Route path="/panel" component={PanelPage} />
+						{/* <Route path="/picker" component={PickerPage} />
 						<Route path="/photo-browser" component={PhotoBrowserPage} />
 						<Route path="/popup" component={PopupPage} />
 						<Route path="/popover" component={PopoverPage} /> */}
