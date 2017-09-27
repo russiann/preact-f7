@@ -41,7 +41,7 @@ const HomePage = () => (
       <ListItem link="/messages" text="Messages" />
       <ListItem link="/navbar" text="Navbar" />
       <ListItem link="/notifications" text="Notifications" />
-      <ListItem link="/panel" text="Panels / Side Panels" badge="TODO" />
+      <ListItem link="/panel" text="Panels / Side Panels" />
       <ListItem link="/picker" text="Picker" badge="TODO" />
       <ListItem link="/photo-browser" text="Photo Browser" badge="TODO" />
       <ListItem link="/popup" text="Popup" badge="TODO" />
