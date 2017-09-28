@@ -2,6 +2,18 @@
   height: 100%;
 }
 
+.preloader-big {
+  width: 42px !important;
+  height: 42px !important;
+}
+.demo-preloaders .col-25 {
+  padding: 5px;
+  line-height: 42px;
+}
+.demo-black-col {
+  background: #000;
+}
+
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
