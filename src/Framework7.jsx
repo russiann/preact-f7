@@ -40,7 +40,7 @@ class Framework7 extends Component {
 
   render() {
     return (
-      <div id="f7-root">
+      <div id="f7-root" className={this.props.colorTheme}>
         {this.props.children}
       </div>
     )
