@@ -3,7 +3,7 @@ import { Page, Navbar, Block, GridRow, GridCol } from '../../dist/preact-f7';
 
 export default () => (
   <Page>
-    <Navbar title="Grid" />
+    <Navbar title="Grid / Layout" />
     <div className='grid-demo'>
       <Block>
         <p>Columns within a row are automatically set to have equal width. Otherwise you can define your column with pourcentage of screen you want.</p>
