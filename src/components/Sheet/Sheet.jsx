@@ -30,18 +30,25 @@ export class Sheet extends Component {
       this.$sheet = this.createSheet(onCloseCallback);
       this.$sheet.open();
     }
+    
+    this.instance.on('pageBeforeOut', () => {
+      if(this.$sheet) this.$sheet.close();
+    });
   }
 
   render() {
     return (
       <div className={sheetClass(this.props)} style={this.props.style}>
         {this.props.children.map(child => {
-          if (child && child.nodeName && child.nodeName.componentName === 'SheetToolbar') return child.children;
+          if (child && child.nodeName && child.nodeName.componentName === 'SheetToolbar')return child;
           return;
         })}
         <div className="sheet-modal-inner">
           <div className="page-content">
-            {this.props.children}
+            {this.props.children.map(child => {
+              if (child && child.nodeName && child.nodeName.componentName !== 'SheetToolbar') return child;
+              return;
+            })}
           </div>
         </div>
       </div>
