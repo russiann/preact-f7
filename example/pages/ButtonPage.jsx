@@ -1,35 +1,38 @@
 import { h } from 'preact';
-import { Page, Navbar, Button, Segmented } from '../../dist/preact-f7';
+import { Page, Navbar, Block, GridRow, Button, Segmented, List, ListItem } from '../../dist/preact-f7';
 
 export default () => (
   <Page>
     <Navbar title="Button" />
-    <div className="block-title">Usual Buttons</div>
-    <div className="block">
-      <div className="row">
+
+    <Block title='Usual Buttons' />
+    <Block>
+      <GridRow>
         <Button className='col'>Button</Button>
         <Button className='col'>Button</Button>
         <Button className='col' round>Button</Button>
-      </div>
-    </div>
-    <div className="block-title">Fill Buttons</div>
-    <div className="block">
-      <div className="row">
+      </GridRow>
+    </Block>
+    <Block title='Fill Buttons' />
+    <Block>
+      <GridRow>
         <Button className='col' fill>Button</Button>
         <Button className='col' fill>Button</Button>
         <Button className='col' fill round>Button</Button>
-      </div>
-    </div>
-    <div className="block-title">Outline Buttons (MD-theme only)</div>
-    <div className="block">
-      <div className="row">
+      </GridRow>
+    </Block>
+
+    <Block title='Outline Buttons (MD-theme only)' />
+    <Block>
+      <GridRow>
         <Button className='col' outline>Button</Button>
         <Button className='col' outline>Button</Button>
         <Button className='col' outline round>Button</Button>
-      </div>
-    </div>
-    <div className="block-title">Raised Buttons (MD-theme only)</div>
-    <div className="block">
+      </GridRow>
+    </Block>
+
+    <Block title='Raised Buttons (MD-theme only)' />
+    <Block>
       <p className="row">
         <Button className='col' raised>Button</Button>
         <Button className='col' raised fill>Button</Button>
@@ -40,9 +43,10 @@ export default () => (
         <Button className='col' fill round raised>Button</Button>
         <Button className='col' outline round raised>Button</Button>
       </p>
-    </div>
-    <div className="block-title">Segmented</div>
-    <div className="block">
+    </Block>
+
+    <Block title='Segmented' />
+    <Block>
       <Segmented raised>
         <Button>Button</Button>
         <Button>Button</Button>
@@ -63,10 +67,10 @@ export default () => (
         <Button round outline>Button</Button>
         <Button round outline active>Active</Button>
       </Segmented>
-    </div>
+    </Block>
 
-    <div className="block-title">Big Buttons</div>
-    <div className="block">
+    <Block title='Big Buttons' />
+    <Block>
       <p className="row">
         <Button className='col' big>Button</Button>
         <Button className='col' big fill>Button</Button>
@@ -75,18 +79,19 @@ export default () => (
         <Button className='col' big raised>Button</Button>
         <Button className='col' big raised fill>Button</Button>
       </p>
-    </div>
+    </Block>
 
-    <div className="block-title">Small Buttons</div>
-    <div className="block">
+    <Block title='Small Buttons' />
+    <Block>
       <p className="row">
         <Button className='col' small>Button</Button>
         <Button className='col' small outline>Button</Button>
         <Button className='col' small fill>Button</Button>
       </p>
-    </div>
-    <div className="block-title">Color Buttons</div>
-    <div className="block">
+    </Block>
+
+    <Block title='Color Buttons' />
+    <Block>
       <p className="row">
         <Button className='col' color='red'>Red</Button>
         <Button className='col' color='pink'>Pink</Button>
@@ -117,9 +122,10 @@ export default () => (
         <Button className='col' color='brown'>Brown</Button>
         <Button className='col' color='gray'>Gray</Button>
       </p>
-    </div>
-    <div className="block-title">Color Fill Buttons</div>
-    <div className="block">
+    </Block>
+
+    <Block title='Color Fill Buttons' />
+    <Block>
       <p className="row">
         <Button className='col' color='red' fill>Red</Button>
         <Button className='col' color='pink' fill>Pink</Button>
@@ -150,19 +156,16 @@ export default () => (
         <Button className='col' color='brown' fill>Brown</Button>
         <Button className='col' color='gray' fill>Gray</Button>
       </p>
-    </div>
-    <div className="block-title">List-Block Buttons</div>
-    <div className="list inset">
-      <ul>
-        <li><a className="list-button item-link">List Button 2</a></li>
-        <li><a className="list-button item-link">List Button 2</a></li>
-        <li><a className="list-button item-link">List Button 2</a></li>
-      </ul>
-    </div>
-    <div className="list inset">
-      <ul>
-        <li><a className="list-button item-link">List Button Red</a></li>
-      </ul>
-    </div>
+    </Block>
+
+    <Block title='List-Block Buttons' />
+    <List inset>
+      <ListItem button>List Button 1</ListItem>
+      <ListItem button>List Button 2</ListItem>
+      <ListItem button>List Button 3</ListItem>
+    </List>
+    <List inset>
+      <ListItem button color='red'>Big Red Button</ListItem>
+    </List>
   </Page>  
 );

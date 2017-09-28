@@ -1,7 +1,8 @@
 import { h } from 'preact';
 import { createClassName } from 'create-classname';
 
-const listClass = createClassName('list', ['inset', 'tabletInset:tablet-inset', 'mediaList:media-list'])
+const listClass = createClassName('list', ['inset', 'tabletInset:tablet-inset', 'mediaList:media-list']);
+const buttonLinkClass = createClassName('list-button item-link', [{ name: 'color', className: ({ color }) => `color-${color}` },]);
 
 const ListContent = ({ grouped, children }) => (
   <Choose>
@@ -58,18 +59,23 @@ const ItemTitle = ({title, after, text, footer, listType}) => (
   </div>
 );
 
-const ListItem = ({media, title, subtitle, text, footer, after, link, children, listType}) => (
+const ListItem = ({button, color, media, title, subtitle, text, footer, after, link, children, listType}) => (
   <li>
-    <ItemContent link={link} className="item-content" >
-      {media && <div className="item-media" >{media}</div>}
-      <div className="item-inner" >
-        <ItemTitle title={title} after={after} text={text} footer={footer} listType={listType} />
-        {subtitle && <div className="item-subtitle" >{subtitle}</div>}
-        {text && listType === 'mediaList' && <div className="item-text" >{text}</div>}
-        {after && listType !== 'mediaList' && <div className="item-after" >{after}</div>}
-      </div>
-    </ItemContent>
-    <div>{children}</div>
+    <If condition={button}>
+      <a className={buttonLinkClass({ color })}>{children}</a>
+    </If>
+    <If condition={!button}>
+      <ItemContent link={link} className="item-content" >
+        {media && <div className="item-media" >{media}</div>}
+        <div className="item-inner" >
+          <ItemTitle title={title} after={after} text={text} footer={footer} listType={listType} />
+          {subtitle && <div className="item-subtitle" >{subtitle}</div>}
+          {text && listType === 'mediaList' && <div className="item-text" >{text}</div>}
+          {after && listType !== 'mediaList' && <div className="item-after" >{after}</div>}
+        </div>
+      </ItemContent>
+      <div>{children}</div>
+    </If>
   </li>
 );
 
