@@ -1,7 +1,7 @@
 import { h, Component } from 'preact';
 import 'framework7/dist/css/framework7.css';
 import F7 from 'framework7';
-import { Framework7, View, Router, Route, Navbar, Page } from '../dist/preact-f7';
+import { Framework7, View, Router, Route, Navbar, Page, Panel } from '../dist/preact-f7';
 
 import './assets/stylesheets/styles.css';
 
@@ -33,6 +33,11 @@ import RangeSliderPage from './pages/RangeSliderPage';
 import ToastPage from './pages/ToastPage';
 import PreloaderPage from './pages/PreloaderPage';
 import NotificationsPage from './pages/NotificationPage';
+import SheetPage from './pages/SheetPage';
+import PullToRefreshPage from './pages/PullToRefreshPage';
+import InfiniteScrollPage from './pages/InfiniteScrollPage';
+import PanelPage, { LeftPanel, RightPanel } from './pages/PanelPage';
+import PopupPage from './pages/PopupPage';
 
 const params = {
   view: { pushState: true }
@@ -42,6 +47,8 @@ export default class App extends Component {
 	render() {
 		return (
 			<Framework7 F7={F7} params={params}>
+				<Panel left cover component={<LeftPanel />} />
+				<Panel right reveal component={<RightPanel />} />
 				<View>
 					<Router>
 						<Route path="/" component={HomePage} />
@@ -63,9 +70,9 @@ export default class App extends Component {
 						<Route path="/inputs" component={InputsPage} />
 						{/* <Route path="/fab-morph" component={FABMorphPage} />
 						<Route path="/form-storage" component={FormStoragePage} />
-						<Route path="/icons" component={IconsPage} />
+						<Route path="/icons" component={IconsPage} /> */}
 						<Route path="/infinite-scroll" component={InfiniteScrollPage} />
-						<Route path="/inputs" component={InputsPage} /> */}
+						{/* <Route path="/inputs" component={InputsPage} /> */}
 						<Route path="/grid" component={GridPage} />
 						{/* <Route path="/lazy-load" component={LazyLoadPage} /> */}
 						<Route path="/list" component={ListsPage} />
@@ -74,20 +81,23 @@ export default class App extends Component {
 						<Route path="/navbar" component={NavbarsPage} />
 						<Route path="/hide-navbars-on-scroll" component={HideNavbarOnScrollPage} />
 						<Route path="/notifications" component={NotificationsPage} />
+						<Route path="/panel" component={PanelPage} />
+						{/* <Route path="/picker" component={PickerPage} />
+						<Route path="/photo-browser" component={PhotoBrowserPage} />
 						{/* <Route path="/panel" component={PanelsPage} />
 						<Route path="/picker" component={PickerPage} />
-						<Route path="/photo-browser" component={PhotoBrowserPage} />
+						<Route path="/photo-browser" component={PhotoBrowserPage} /> */}
 						<Route path="/popup" component={PopupPage} />
-						<Route path="/popover" component={PopoverPage} /> */}
+						{/* <Route path="/popover" component={PopoverPage} /> */}
 						<Route path="/preloader" component={PreloaderPage} />
-						{/* <Route path="/progressbar" component={ProgressBarPage} />
+						{/* <Route path="/progressbar" component={ProgressBarPage} /> */}
 						<Route path="/pull-to-refresh" component={PullToRefreshPage} />
-						<Route path="/radio" component={RadioPage} /> */}
+						{/* <Route path="/radio" component={RadioPage} /> */}
 						<Route path="/range" component={RangeSliderPage} />
 						{/* <Route path="/searchbar" component={SearchbarPage} />
-						<Route path="/searchbar-expandable" component={SearchbarExpandablePage} />
-						<Route path="/sheet-modal" component={SheetModalPage} />
-						<Route path="/smart-select" component={SmartSelectPage} />
+						<Route path="/searchbar-expandable" component={SearchbarExpandablePage} /> */}
+						<Route path="/sheet-modal" component={SheetPage} />
+						{/* <Route path="/smart-select" component={SmartSelectPage} />
 						<Route path="/sortable" component={SortableListPage} />
 						<Route path="/statusbar" component={StatusbarPage} /> */}
 						<Route path="/subnavbar" component={SubNavbarsPage} />

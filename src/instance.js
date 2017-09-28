@@ -1,6 +1,7 @@
 let instance;
 
 export const setInstance = (value) => {
+  window.instance = value;
   instance = value;
 }
 

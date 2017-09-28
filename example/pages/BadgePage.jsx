@@ -42,21 +42,21 @@ export default () => (
     <List>
       <ListItem
         title="Foo Bar"
-        icon={<i className="icon icon-f7"></i>}
+        media={<Icon icon='icon-f7' />}
         after={<Badge>0</Badge>}
       />
       <ListItem
         title="Ivan Petrov"
-        icon={<i className="icon icon-f7"></i>}
+        media={<Icon icon='icon-f7' />}
         after={<Badge color='blue'>CEO</Badge>}
       />
       <ListItem
         title="John Doe"
-        icon={<i className="icon icon-f7"></i>}
+        media={<Icon icon='icon-f7' />}
         after={<Badge color='green'>5</Badge>} />
       <ListItem
         title="Jane Doe"
-        icon={<i className="icon icon-f7"></i>}
+        media={<Icon icon='icon-f7' />}
         after={<Badge color='orange'>NEW</Badge>}
       />
     </List>

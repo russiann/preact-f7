@@ -32,7 +32,7 @@ const HomePage = () => (
       <ListItem link="/fab-morph" text="FAB Morph" badge="TODO" />
       <ListItem link="/form-storage" text="Form Storage" badge="TODO" />
       <ListItem link="/icons" text="Icons" badge="TODO" />
-      <ListItem link="/infinite-scroll" text="Infinite Scroll" badge="TODO" />
+      <ListItem link="/infinite-scroll" text="Infinite Scroll" />
       <ListItem link="/inputs" text="Inputs" />
       <ListItem link="/grid" text="Grid / Layout Grid" />
       <ListItem link="/lazy-load" text="Lazy Load" badge="TODO" />
@@ -41,19 +41,19 @@ const HomePage = () => (
       <ListItem link="/messages" text="Messages" />
       <ListItem link="/navbar" text="Navbar" />
       <ListItem link="/notifications" text="Notifications" />
-      <ListItem link="/panel" text="Panels / Side Panels" badge="TODO" />
+      <ListItem link="/panel" text="Panels / Side Panels" />
       <ListItem link="/picker" text="Picker" badge="TODO" />
       <ListItem link="/photo-browser" text="Photo Browser" badge="TODO" />
       <ListItem link="/popup" text="Popup" badge="TODO" />
       <ListItem link="/popover" text="Popover" badge="TODO" />
       <ListItem link="/preloader" text="Preloader"  />
       <ListItem link="/progressbar" text="Progress Bar" badge="TODO" />
-      <ListItem link="/pull-to-refresh" text="Pull To Refresh" badge="TODO" />
+      <ListItem link="/pull-to-refresh" text="Pull To Refresh" />
       <ListItem link="/radio" text="Radio" badge="TODO" />
       <ListItem link="/range" text="Range Slider" badge="TODO"/>
       <ListItem link="/searchbar" text="Searchbar" badge="TODO" />
       <ListItem link="/searchbar-expandable" text="Searchbar Expandable" badge="TODO" />
-      <ListItem link="/sheet-modal" text="Sheet Modal" badge="TODO" />
+      <ListItem link="/sheet-modal" text="Sheet Modal" />
       <ListItem link="/smart-select" text="Smart Select" badge="TODO" />
       <ListItem link="/sortable" text="Sortable List" badge="TODO" />
       <ListItem link="/statusbar" text="Statusbar" badge="TODO" />

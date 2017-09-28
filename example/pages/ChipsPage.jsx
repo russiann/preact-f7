@@ -35,15 +35,13 @@ export default () => (
       <Chip label='Jone Doe'>
         <img  alt="image1" src="http://lorempixel.com/100/100/people/9/"/>
       </Chip>
-      <Chip label='Jone Doe'>
-        <img  alt="image2" src="http://lorempixel.com/100/100/people/9/"/>
-      </Chip>
       <Chip label='John Doe'>
         <img  alt="image3" src="http://lorempixel.com/100/100/people/3/"/>
       </Chip>
       <Chip label='Adam Smith'>
         <img  alt="image4" src="http://lorempixel.com/100/100/people/7/"/>
       </Chip>
+      <Chip label='Jennifer' backgroundColorMedia='pink'>J</Chip>
       <Chip label='Chris' backgroundColorMedia='yellow' textColorMedia='black'>C</Chip>
       <Chip label='Kate' backgroundColorMedia='red'>K</Chip>
     </Block>
