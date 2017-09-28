@@ -83,10 +83,13 @@ class Page extends Component {
         <If condition={!this.state.hasTabs}>
           <div className={pageContentClass(this.pageContent)} {...this.propsPageContent}>
             {this.props.children.map(child => {
-              return (child && child.nodeName && !['Navbar','Toolbar'].includes(child.nodeName.componentName)) ? child : null;
+              return (child && child.nodeName && !['Navbar','Toolbar','Popup'].includes(child.nodeName.componentName)) ? child : null;
             })}
           </div>
         </If>
+        {this.props.children.map(child => {
+          return (child && child.nodeName && ['Popup'].includes(child.nodeName.componentName)) ? child : null;
+        })}
       </div>
     )
   }

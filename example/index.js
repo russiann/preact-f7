@@ -37,6 +37,7 @@ import SheetPage from './pages/SheetPage';
 import PullToRefreshPage from './pages/PullToRefreshPage';
 import InfiniteScrollPage from './pages/InfiniteScrollPage';
 import PanelPage, { LeftPanel, RightPanel } from './pages/PanelPage';
+import PopupPage from './pages/PopupPage';
 
 const params = {
   view: { pushState: true }
@@ -80,11 +81,17 @@ export default class App extends Component {
 						<Route path="/navbar" component={NavbarsPage} />
 						<Route path="/hide-navbars-on-scroll" component={HideNavbarOnScrollPage} />
 						<Route path="/notifications" component={NotificationsPage} />
+<<<<<<< HEAD
 						<Route path="/panel" component={PanelPage} />
 						{/* <Route path="/picker" component={PickerPage} />
 						<Route path="/photo-browser" component={PhotoBrowserPage} />
+=======
+						{/* <Route path="/panel" component={PanelsPage} />
+						<Route path="/picker" component={PickerPage} />
+						<Route path="/photo-browser" component={PhotoBrowserPage} /> */}
+>>>>>>> PopupPage
 						<Route path="/popup" component={PopupPage} />
-						<Route path="/popover" component={PopoverPage} /> */}
+						{/* <Route path="/popover" component={PopoverPage} /> */}
 						<Route path="/preloader" component={PreloaderPage} />
 						{/* <Route path="/progressbar" component={ProgressBarPage} /> */}
 						<Route path="/pull-to-refresh" component={PullToRefreshPage} />
