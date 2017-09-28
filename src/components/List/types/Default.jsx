@@ -6,7 +6,7 @@ const buttonLinkClass = createClassName('list-button item-link', [{ name: 'color
 
 const ListContent = ({ grouped, children }) => (
   <Choose>
-    <When condition={grouped}>{children}</When>
+    <When condition={grouped}><span>{children}</span></When>
     <Otherwise>
       <ul>{children}</ul>
     </Otherwise>
