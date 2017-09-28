@@ -44,18 +44,18 @@ const hashtag = '#'; // avoid lint error
 
 const icon = createClassName('icon', ['fill:icon-fill', 'closeSheet:sheet-close', { name: 'color', className: ({ color }) => `color-${color}` }]);
 
-const I = ({...props, size, children, link, navbarIcon, badge}) => (
+const I = ({...props, style, size, children, link, navbarIcon, badge}) => (
   <Choose>
     <When condition={link || navbarIcon}>
       <a href={hashtag} className="link">
-        <i className={icon(props)} style={{fontSize: size}} >
+        <i className={icon(props)} style={{ fontSize: size, ...style }} >
           {children}
           <If condition={badge}>{badge}</If>
         </i>
       </a>
     </When>
     <Otherwise>
-      <i className={icon(props)} style={{fontSize: size}}>
+      <i className={icon(props)} style={{ fontSize: size, ...style }}>
         {children}
         <If condition={badge}>{badge}</If>
       </i>
@@ -67,22 +67,22 @@ export const Icon = (props) => (
   <With icon={getIconConfiguration(props)}>
     <Choose>
       <When condition={icon.type === 'icon'}>
-        <I {...icon} className={`icon ${icon.name}`}></I>
+        <I {...icon} className={`icon ${icon.name}`} style={props.style}></I>
       </When>
       <When condition={icon.type === 'f7'}>
-        <I {...icon} className="f7-icons">{icon.name}</I>
+        <I {...icon} className="f7-icons" style={props.style}>{icon.name}</I>
       </When>
       <When condition={icon.type === 'material'}>
-        <I {...icon} className="material-icons">{icon.name}</I>
+        <I {...icon} className="material-icons" style={props.style}>{icon.name}</I>
       </When>
       <When condition={icon.type === 'fa'}>
-        <I {...icon} className={`fa fa-${icon.name}`}></I>
+        <I {...icon} className={`fa fa-${icon.name}`} style={props.style}></I>
       </When>
       <When condition={icon.type === 'ion'}>
-        <I {...icon} className={`ion-${icon.name}`}></I>
+        <I {...icon} className={`ion-${icon.name}`} style={props.style}></I>
       </When>
       <Otherwise>
-        <I {...icon} className={`${icon.name}`}></I>
+        <I {...icon} className={`${icon.name}`} style={props.style}></I>
       </Otherwise>
     </Choose>
   </With>

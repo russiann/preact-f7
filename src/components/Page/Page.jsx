@@ -14,7 +14,6 @@ const pageClass = createClassName('page', [
 
 
 class Page extends Component {
-
   state = {
     hasTabs: false,
   }
@@ -44,10 +43,9 @@ class Page extends Component {
     }
   }
 
-  render() {   
-
+  render() {
     return (
-      <div className={pageClass(this.props)}>
+      <div className={pageClass(this.props)} style={this.props.style}>
         {this.props.children.map(child => {
           return (child && child.nodeName && ['Navbar'].includes(child.nodeName.componentName)) ? child : null;
         })}
