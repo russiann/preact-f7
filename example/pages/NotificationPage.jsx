@@ -32,7 +32,7 @@ export default class NotificationPage extends Component{
           </p>
           <p>
             <Button raised onClick={() => notification({
-              icon: <Icon icon='icon-f7' />,
+              icon: <Icon size={16} icon='icon-f7' />,
               title: 'Framework7',
               titleRightText: 'now',
               subtitle: 'This is a subtitle',
