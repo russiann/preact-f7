@@ -27,10 +27,10 @@ export default class ToastPage extends Component{
           <p>
             <Button raised onClick={() => toast({
               text: 'Toast on Top',
-              position: 'top',
+              position: 'bottom',
               closeTimeout: 1000,
               on: { close: () => console.log('onClose') }
-            }).open()}> Toast on Top</Button>
+            }).open()}>Toast on Bottom</Button>
           </p>
           <p>
             <Button raised onClick={() => this.setState({ toastTop: true })}> Toast on Top</Button>
@@ -55,7 +55,7 @@ export default class ToastPage extends Component{
             <Button raised onClick={() => this.setState({ toastIcon: true })}>Toast with icon</Button>
             <Toast 
               active={this.state.toastIcon}  
-              message='Complete'
+              message="I'm with icon"
               position='center'
               time={1500} 
               icon={<Icon ifIos="f7:star" ifMaterial="material:star" />}
@@ -65,7 +65,7 @@ export default class ToastPage extends Component{
           <p>
             <Button raised onClick={() => toast({
               closeTimeout: 1000,
-              text: 'Complete',
+              text: "I'm with icon",
               position: 'center',
               icon: <Icon ifIos="f7:star" ifMaterial="material:star" />
             }).open()}>Toast with icon</Button>
@@ -73,7 +73,7 @@ export default class ToastPage extends Component{
           <p>
             <Button raised onClick={() => toast({
               closeTimeout: 1000,
-              text: 'Complete',
+              text: "I'm with icon",
               position: 'center',
               icon: '<i class="icon f7-icons">star</i>'
             }).open()}>Toast with icon</Button>
