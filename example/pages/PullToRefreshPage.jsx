@@ -4,6 +4,28 @@ import { Page, Navbar, List, ListItem, ListGroup, BlockFooter, Block, PullToRefr
 
 //refresh, done, beforeDestroy, pullMove, pullEnd, pullStart
 export default class PullToRefreshPage extends Component {
+  state = {
+    items: [{
+      img: 'http://lorempixel.com/88/88/abstract/1',
+      title: 'Yellow Submarine',
+      subtitle: 'Beatles'
+    }, {
+      img: 'http://lorempixel.com/88/88/abstract/2',
+      title: "Don't Stop Me Now",
+      subtitle: 'Queen'
+    }, {
+      img: 'http://lorempixel.com/88/88/abstract/3',
+      title: 'Billie Jean',
+      subtitle: 'Michael Jackson'
+    }]
+  };
+
+  newItem = {
+    img: 'http://lorempixel.com/88/88/abstract/4',
+    title: 'Californication',
+    subtitle: 'Red Hot Chili Peppers'
+  };
+
   render() {
     return (
       <Page>
@@ -12,6 +34,7 @@ export default class PullToRefreshPage extends Component {
           distance={50}
           onRefresh={(done) => {
             console.log('onRefresh');
+            this.setState({ items: [...this.state.items, this.newItem] })
             setTimeout(done, 1000);
           }}
           onDone={() => console.log('onDone')}
@@ -19,40 +42,14 @@ export default class PullToRefreshPage extends Component {
           onPullEnd={() => console.log('onPullEnd')}
           onPullStart={() => console.log('onPullStart')}
         />
-        <div className="list media-list">
-          <ul>
-            <li className="item-content">
-              <div className="item-media"><img src="http://lorempixel.com/88/88/abstract/1" width="44"/></div>
-              <div className="item-inner">
-                <div className="item-title-row">
-                  <div className="item-title">Yellow Submarine</div>
-                </div>
-                <div className="item-subtitle">Beatles</div>
-              </div>
-            </li>
-            <li className="item-content">
-              <div className="item-media"><img src="http://lorempixel.com/88/88/abstract/2" width="44"/></div>
-              <div className="item-inner">
-                <div className="item-title-row">
-                  <div className="item-title">Don't Stop Me Now</div>
-                </div>
-                <div className="item-subtitle">Queen</div>
-              </div>
-            </li>
-            <li className="item-content">
-              <div className="item-media"><img src="http://lorempixel.com/88/88/abstract/3" width="44"/></div>
-              <div className="item-inner">
-                <div className="item-title-row">
-                  <div className="item-title">Billie Jean</div>
-                </div>
-                <div className="item-subtitle">Michael Jackson</div>
-              </div>
-            </li>
-          </ul>
-          <div className="block-footer">
-            <p>Just pull page down to let the magic happen.Note that pull-to-refresh feature is optimised for touch and native scrolling so it may not work on desktop browser.</p>
-          </div>
-        </div>
+        <List mediaList>
+          <For each='item' of={this.state.items}>
+            <ListItem media={<img src={item.img} width="44" />} title={item.title} subtitle={item.subtitle} />
+          </For>
+        </List>
+        <BlockFooter>
+          <p>Just pull page down to let the magic happen.Note that pull-to-refresh feature is optimised for touch and native scrolling so it may not work on desktop browser.</p>
+        </BlockFooter>
       </Page>
     );
   }
