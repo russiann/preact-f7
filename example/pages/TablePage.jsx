@@ -1,5 +1,5 @@
 import { h } from 'preact';
-import { Page, Navbar, Block, Table } from '../../dist/preact-f7';
+import { Page, Navbar, Block, BlockHeader, Table, TableHeader, TableRow, TableBody, TableCell, Icon } from '../../dist/preact-f7';
 
 const data = [{
   name: 'Frozen yogurt',
@@ -36,361 +36,358 @@ export default () => (
     <Navbar title="Data Table" />
     <Block title="Plain table" />
     <Table>
-      <thead>
-        <tr>
-          <th className="label-cell">Desert (100g serving)</th>
-          <th className="numeric-cell">Calories</th>
-          <th className="numeric-cell">Fat(g)</th>
-          <th className="numeric-cell">Carbs</th>
-          <th className="numeric-cell">Protein(g)</th>
-        </tr>
-      </thead>
-      <tbody>
+      <TableHeader>
+        <TableRow>
+          <TableCell header label>Desert (100g serving)</TableCell>
+          <TableCell header numeric>Calories</TableCell>
+          <TableCell header numeric>Fat(g)</TableCell>
+          <TableCell header numeric>Carbs</TableCell>
+          <TableCell header numeric>Protein(g)</TableCell>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
         <For each="item" of={data}>
-          <tr key={item.calories}>
-            <td className="label-cell">{item.name}</td>
-            <td className="numeric-cell">{item.calories}</td>
-            <td className="numeric-cell">{item.fat}</td>
-            <td className="numeric-cell">{item.carbs}</td>
-            <td className="numeric-cell">{item.protein}</td>
-          </tr>
+          <TableRow key={item.calories}>
+            <TableCell label>{item.name}</TableCell>
+            <TableCell numeric>{item.calories}</TableCell>
+            <TableCell numeric>{item.fat}</TableCell>
+            <TableCell numeric>{item.carbs}</TableCell>
+            <TableCell numeric>{item.protein}</TableCell>
+          </TableRow>
         </For>
-      </tbody>
+      </TableBody>
     </Table>
     <Block title="Within card" />
     <Table card>
-      <thead>
-        <tr>
-          <th className="label-cell">Desert (100g serving)</th>
-          <th className="numeric-cell">Calories</th>
-          <th className="numeric-cell">Fat (g)</th>
-          <th className="numeric-cell">Carbs</th>
-          <th className="numeric-cell">Protein (g)</th>
-        </tr>
-      </thead>
-      <tbody>
+      <TableHeader>
+        <TableRow>
+          <TableCell header label>Desert (100g serving)</TableCell>
+          <TableCell header numeric>Calories</TableCell>
+          <TableCell header numeric>Fat(g)</TableCell>
+          <TableCell header numeric>Carbs</TableCell>
+          <TableCell header numeric>Protein(g)</TableCell>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
         <For each="item" of={data}>
-          <tr key={item.calories}>
-            <td className="label-cell">{item.name}</td>
-            <td className="numeric-cell">{item.calories}</td>
-            <td className="numeric-cell">{item.fat}</td>
-            <td className="numeric-cell">{item.carbs}</td>
-            <td className="numeric-cell">{item.protein}</td>
-          </tr>
+          <TableRow key={item.calories}>
+            <TableCell label>{item.name}</TableCell>
+            <TableCell numeric>{item.calories}</TableCell>
+            <TableCell numeric>{item.fat}</TableCell>
+            <TableCell numeric>{item.carbs}</TableCell>
+            <TableCell numeric>{item.protein}</TableCell>
+          </TableRow>
         </For>
-      </tbody>
+      </TableBody>
     </Table>
-    <div className="block-title">Selectable rows</div>
-    <div className="data-table data-table-init card">
-      <table>
-        <thead>
-          <tr>
-            <th className="checkbox-cell">
-              <label className="checkbox">
-                <input type="checkbox" />
-                <i className="icon-checkbox"></i>
-              </label>
-            </th>
-            <th className="label-cell">Desert (100g serving)</th>
-            <th className="numeric-cell">Calories</th>
-            <th className="numeric-cell">Fat (g)</th>
-            <th className="numeric-cell">Carbs</th>
-            <th className="numeric-cell">Protein (g)</th>
-            <th className="checkbox-cell">
-              <label className="checkbox">
-                <input type="checkbox" />
-                <i className="icon-checkbox"></i>
-              </label>
-              <span>In Stock</span>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <For each="item" of={data}>
-            <tr key={item.calories}>
-              <td className="checkbox-cell">
-                <label className="checkbox">
-                  <input type="checkbox" />
-                  <i className="icon-checkbox"></i>
-                </label>
-              </td>
-              <td className="label-cell">{item.name}</td>
-              <td className="numeric-cell">{item.calories}</td>
-              <td className="numeric-cell">{item.fat}</td>
-              <td className="numeric-cell">{item.carbs}</td>
-              <td className="numeric-cell">{item.protein}</td>
-              <td className="checkbox-cell">
-                <label className="checkbox">
-                  <input type="checkbox" />
-                  <i className="icon-checkbox"></i>
-                </label>
-              </td>
-            </tr>
-          </For>
-        </tbody>
-      </table>
-    </div>
-    <div className="block-title">Tablet-only columns</div>
-    <div className="block-header">
-      <p>"Comments" column will be visible only on large screen devices (tablets)</p>
-    </div>
-    <div className="data-table data-table-init card">
-      <table>
-        <thead>
-          <tr>
-            <th className="checkbox-cell">
-              <label className="checkbox">
-                <input type="checkbox" />
-                <i className="icon-checkbox"></i>
-              </label>
-            </th>
-            <th className="label-cell">Desert (100g serving)</th>
-            <th className="numeric-cell">Calories</th>
-            <th className="numeric-cell">Fat (g)</th>
-            <th className="numeric-cell">Carbs</th>
-            <th className="numeric-cell">Protein (g)</th>
-            <th className="tablet-only"><i>comments</i> Comments</th>
-          </tr>
-        </thead>
-        <tbody>
-          <For each="item" of={data}>
-            <tr key={item.calories}>
-              <td className="checkbox-cell">
-                <label className="checkbox">
-                  <input type="checkbox" />
-                  <i className="icon-checkbox"></i>
-                </label>
-              </td>
-              <td className="label-cell">{item.name}</td>
-              <td className="numeric-cell">{item.calories}</td>
-              <td className="numeric-cell">{item.fat}</td>
-              <td className="numeric-cell">{item.carbs}</td>
-              <td className="numeric-cell">{item.protein}</td>
-              <td className="tablet-only">{item.description}</td>
-            </tr>
-          </For>
-        </tbody>
-      </table>
-    </div>
-    <div className="block-title">Within card with title and actions</div>
+    <Block title='Selectable rows' />
+    <Table card init>
+      <TableHeader>
+        <TableRow>
+          <TableCell header checkbox />
+          <TableCell header label>Desert (100g serving)</TableCell>
+          <TableCell header numeric>Calories</TableCell>
+          <TableCell header numeric>Fat (g)</TableCell>
+          <TableCell header numeric>Carbs</TableCell>
+          <TableCell header numeric>Protein (g)</TableCell>
+          <TableCell header checkbox>
+            <span>In Stock</span>
+          </TableCell>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        <For each="item" of={data}>
+          <TableRow key={item.calories}>
+            <TableCell checkbox />
+            <TableCell label>{item.name}</TableCell>
+            <TableCell numeric>{item.calories}</TableCell>
+            <TableCell numeric>{item.fat}</TableCell>
+            <TableCell numeric>{item.carbs}</TableCell>
+            <TableCell numeric>{item.protein}</TableCell>
+            <TableCell checkbox />
+          </TableRow>
+        </For>
+      </TableBody>
+    </Table>
+    <Block title='Tablet-only columns' />
+    <BlockHeader>
+      <p>"Comments" column will be visible only on large screen devices (tablets)</p>  
+    </BlockHeader>
+    <Table card init>
+      <TableHeader>
+        <TableRow>
+          <TableCell header checkbox />
+          <TableCell header label>Desert (100g serving)</TableCell>
+          <TableCell header numeric>Calories</TableCell>
+          <TableCell header numeric>Fat (g)</TableCell>
+          <TableCell header numeric>Carbs</TableCell>
+          <TableCell header numeric>Protein (g)</TableCell>
+          <TableCell header tabletOnly>
+            <Icon ifIos="f7:chat_fill" ifMaterial="material:message" />
+            Comments
+          </TableCell>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        <For each="item" of={data}>
+          <TableRow key={item.calories}>
+            <TableCell checkbox />
+            <TableCell label>{item.name}</TableCell>
+            <TableCell numeric>{item.calories}</TableCell>
+            <TableCell numeric>{item.fat}</TableCell>
+            <TableCell numeric>{item.carbs}</TableCell>
+            <TableCell numeric>{item.protein}</TableCell>
+            <TableCell tabletOnly>{item.description}</TableCell>
+          </TableRow>
+        </For>
+      </TableBody>
+    </Table>
+    <Block title='Within card with title and actions' />
     <div className="data-table data-table-init card">
       <div className="card-header">
         <div className="data-table-title">Nutrition</div>
-        <div className="data-table-actions"><a className="link icon-only"><i>sort</i></a><a className="link icon-only"><i>more</i></a></div>
+        <div className="data-table-actions">
+          <a className="link icon-only">
+            <Icon ifIos="f7:sort" ifMaterial="material:sort" />
+          </a>
+          <a className="link icon-only">
+            <Icon ifIos="f7:more_vertical_round" ifMaterial="material:more_vert" />
+          </a>
+        </div>
       </div>
       <div className="card-content">
         <table>
-          <thead>
-            <tr>
-              <th className="checkbox-cell">
-                <label className="checkbox">
-                  <input type="checkbox" />
-                  <i className="icon-checkbox"></i>
-                </label>
-              </th>
-              <th className="label-cell">Desert (100g serving)</th>
-              <th className="numeric-cell">Calories</th>
-              <th className="numeric-cell">Fat (g)</th>
-              <th className="numeric-cell">Carbs</th>
-              <th className="numeric-cell">Protein (g)</th>
-              <th className="tablet-only"><i>comments</i> Comments</th>
-            </tr>
-          </thead>
-          <tbody>
+          <TableHeader>
+            <TableRow>
+              <TableCell header checkbox />
+              <TableCell header label>Desert (100g serving)</TableCell>
+              <TableCell header numeric>Calories</TableCell>
+              <TableCell header numeric>Fat (g)</TableCell>
+              <TableCell header numeric>Carbs</TableCell>
+              <TableCell header numeric>Protein (g)</TableCell>
+              <TableCell header tabletOnly>
+                <Icon ifIos="f7:chat_fill" ifMaterial="material:message" />
+                Comments
+              </TableCell>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
             <For each="item" of={data}>
-              <tr key={item.calories}>
-                <td className="checkbox-cell">
-                  <label className="checkbox">
-                    <input type="checkbox" />
-                    <i className="icon-checkbox"></i>
-                  </label>
-                </td>
-                <td className="label-cell">{item.name}</td>
-                <td className="numeric-cell">{item.calories}</td>
-                <td className="numeric-cell">{item.fat}</td>
-                <td className="numeric-cell">{item.carbs}</td>
-                <td className="numeric-cell">{item.protein}</td>
-                <td className="tablet-only">{item.description}</td>
-              </tr>
+              <TableRow key={item.calories}>
+                <TableCell checkbox />
+                <TableCell label>{item.name}</TableCell>
+                <TableCell numeric>{item.calories}</TableCell>
+                <TableCell numeric>{item.fat}</TableCell>
+                <TableCell numeric>{item.carbs}</TableCell>
+                <TableCell numeric>{item.protein}</TableCell>
+                <TableCell tabletOnly>{item.description}</TableCell>
+              </TableRow>
             </For>
-          </tbody>
+          </TableBody>
         </table>
       </div>
     </div>
-    <div className="block-title">Sortable columns</div>
+    <Block title='Sortable columns' />
     <div className="data-table data-table-init card">
       <div className="card-header">
         <div className="data-table-title">Nutrition</div>
-        <div className="data-table-actions"><a className="link icon-only"><i>sort</i></a><a className="link icon-only"><i>more</i></a></div>
+        <div className="data-table-actions">
+          <a className="link icon-only">
+            <Icon ifIos="f7:sort" ifMaterial="material:sort" />
+          </a>
+          <a className="link icon-only">
+            <Icon ifIos="f7:more_vertical_round" ifMaterial="material:more_vert" />
+          </a>
+        </div>
       </div>
       <div className="card-content">
         <table>
-          <thead>
-            <tr>
-              <th className="checkbox-cell">
-                <label className="checkbox">
-                  <input type="checkbox" />
-                  <i className="icon-checkbox"></i>
-                </label>
-              </th>
-              <th className="label-cell sortable-cell sortable-cell-active">Desert (100g serving)</th>
-              <th className="numeric-cell sortable-cell">Calories</th>
-              <th className="numeric-cell sortable-cell">Fat (g)</th>
-              <th className="numeric-cell sortable-cell">Carbs</th>
-              <th className="numeric-cell sortable-cell">Protein (g)</th>
-              <th className="tablet-only"><i>comments</i> Comments</th>
-            </tr>
-          </thead>
-          <tbody>
+          <TableHeader>
+            <TableRow>
+              <TableCell header checkbox />
+              <TableCell header label sortable active>Desert (100g serving)</TableCell>
+              <TableCell header numeric sortable>Calories</TableCell>
+              <TableCell header numeric sortable>Fat (g)</TableCell>
+              <TableCell header numeric sortable>Carbs</TableCell>
+              <TableCell header numeric sortable>Protein (g)</TableCell>
+              <TableCell header tabletOnly>
+                <Icon ifIos="f7:chat_fill" ifMaterial="material:message" />
+                Comments
+              </TableCell>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
             <For each="item" of={data}>
-              <tr key={item.calories}>
-                <td className="checkbox-cell">
-                  <label className="checkbox">
-                    <input type="checkbox" />
-                    <i className="icon-checkbox"></i>
-                  </label>
-                </td>
-                <td className="label-cell">{item.name}</td>
-                <td className="numeric-cell">{item.calories}</td>
-                <td className="numeric-cell">{item.fat}</td>
-                <td className="numeric-cell">{item.carbs}</td>
-                <td className="numeric-cell">{item.protein}</td>
-                <td className="tablet-only">{item.description}</td>
-              </tr>
+              <TableRow key={item.calories}>
+                <TableCell checkbox />
+                <TableCell label>{item.name}</TableCell>
+                <TableCell numeric>{item.calories}</TableCell>
+                <TableCell numeric>{item.fat}</TableCell>
+                <TableCell numeric>{item.carbs}</TableCell>
+                <TableCell numeric>{item.protein}</TableCell>
+                <TableCell tabletOnly>{item.description}</TableCell>
+              </TableRow>
             </For>
-          </tbody>
+          </TableBody>
         </table>
       </div>
     </div>
-    <div className="block-title">With title and different actions on select</div>
+    <Block title='With title and different actions on select' />
     <div className="data-table data-table-init card">
       <div className="card-header">
         <div className="data-table-header">
           <div className="data-table-title">Nutrition</div>
-          <div className="data-table-actions"><a className="link icon-only"><i>sort</i></a><a className="link icon-only"><i>more</i></a></div>
+          <div className="data-table-actions">
+            <a className="link icon-only">
+              <Icon ifIos="f7:sort" ifMaterial="material:sort" />
+            </a>
+            <a className="link icon-only">
+              <Icon ifIos="f7:more_vertical_round" ifMaterial="material:more_vert" />
+            </a>
+          </div>
         </div>
         <div className="data-table-header-selected">
-          <div className="data-table-title-selected"><span className="data-table-selected-count"></span> items selected</div>
-          <div className="data-table-actions"><a className="link icon-only"><i>trash</i></a><a className="link icon-only"><i>more</i></a></div>
+          <div className="data-table-title-selected">
+            <span className="data-table-selected-count"></span>
+            items selected
+          </div>
+          <div className="data-table-actions">
+            <a className="link icon-only">
+              <Icon ifIos="f7:trash" ifMaterial="material:delete" />
+            </a>
+            <a className="link icon-only">
+              <Icon ifIos="f7:more_vertical_round" ifMaterial="material:more_vert" />
+            </a>
+          </div>
         </div>
       </div>
       <div className="card-content">
         <table>
-          <thead>
-            <tr>
-              <th className="checkbox-cell">
-                <label className="checkbox">
-                  <input type="checkbox" />
-                  <i className="icon-checkbox"></i>
-                </label>
-              </th>
-              <th className="label-cell">Desert (100g serving)</th>
-              <th className="numeric-cell">Calories</th>
-              <th className="numeric-cell">Fat (g)</th>
-              <th className="numeric-cell">Carbs</th>
-              <th className="numeric-cell">Protein (g)</th>
-              <th className="tablet-only"><i>comments</i> Comments</th>
-            </tr>
-          </thead>
-          <tbody>
+          <TableHeader>
+            <TableRow>
+              <TableCell header checkbox />
+              <TableCell header label>Desert (100g serving)</TableCell>
+              <TableCell header numeric>Calories</TableCell>
+              <TableCell header numeric>Fat (g)</TableCell>
+              <TableCell header numeric>Carbs</TableCell>
+              <TableCell header numeric>Protein (g)</TableCell>
+              <TableCell header tabletOnly>
+                <Icon ifIos="f7:chat_fill" ifMaterial="material:message" />
+                Comments
+              </TableCell>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
             <For each="item" of={data}>
-              <tr key={item.calories}>
-                <td className="checkbox-cell">
-                  <label className="checkbox">
-                    <input type="checkbox" />
-                    <i className="icon-checkbox"></i>
-                  </label>
-                </td>
-                <td className="label-cell">{item.name}</td>
-                <td className="numeric-cell">{item.calories}</td>
-                <td className="numeric-cell">{item.fat}</td>
-                <td className="numeric-cell">{item.carbs}</td>
-                <td className="numeric-cell">{item.protein}</td>
-                <td className="tablet-only">{item.description}</td>
-              </tr>
+              <TableRow key={item.calories}>
+                <TableCell checkbox />
+                <TableCell label>{item.name}</TableCell>
+                <TableCell numeric>{item.calories}</TableCell>
+                <TableCell numeric>{item.fat}</TableCell>
+                <TableCell numeric>{item.carbs}</TableCell>
+                <TableCell numeric>{item.protein}</TableCell>
+                <TableCell tabletOnly>{item.description}</TableCell>
+              </TableRow>
             </For>
-          </tbody>
+          </TableBody>
         </table>
       </div>
     </div>
-    <div className="block-title">Alternate header with actions</div>
+    <Block title='Alternate header with actions' />
     <div className="data-table data-table-init card">
       <div className="card-header">
-        <div className="data-table-links"><a className="link">Add</a><a className="link">Remove</a></div>
-        <div className="data-table-actions"><a className="link icon-only"><i>sort</i></a><a className="link icon-only"><i>more</i></a></div>
+        <div className="data-table-links">
+          <a className="link">Add</a>
+          <a className="link">Remove</a>
+        </div>
+        <div className="data-table-actions">
+          <a className="link icon-only">
+            <Icon ifIos="f7:sort" ifMaterial="material:sort" />
+          </a>
+          <a className="link icon-only">
+            <Icon ifIos="f7:more_vertical_round" ifMaterial="material:more_vert" />
+            </a>
+          </div>
       </div>
       <div className="card-content">
         <table>
-          <thead>
-            <tr>
-              <th className="checkbox-cell">
-                <label className="checkbox">
-                  <input type="checkbox" />
-                  <i className="icon-checkbox"></i>
-                </label>
-              </th>
-              <th className="label-cell">Desert (100g serving)</th>
-              <th className="numeric-cell">Calories</th>
-              <th className="numeric-cell">Fat (g)</th>
-              <th className="numeric-cell">Carbs</th>
-              <th className="numeric-cell">Protein (g)</th>
-              <th className="tablet-only"><i>comments</i> Comments</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
+          <TableHeader>
+            <TableRow>
+              <TableCell header checkbox />
+              <TableCell header label>Desert (100g serving)</TableCell>
+              <TableCell numeric>Calories</TableCell>
+              <TableCell numeric>Fat (g)</TableCell>
+              <TableCell numeric>Carbs</TableCell>
+              <TableCell numeric>Protein (g)</TableCell>
+              <TableCell tabletOnly>
+                <Icon ifIos="f7:chat_fill" ifMaterial="material:message" />
+                Comments
+              </TableCell>
+              <TableCell header />
+            </TableRow>
+          </TableHeader>
+          <TableBody>
             <For each="item" of={data}>
-              <tr key={item.calories}>
-                <td className="checkbox-cell">
-                  <label className="checkbox">
-                    <input type="checkbox" />
-                    <i className="icon-checkbox"></i>
-                  </label>
-                </td>
-                <td className="label-cell">{item.name}</td>
-                <td className="numeric-cell">{item.calories}</td>
-                <td className="numeric-cell">{item.fat}</td>
-                <td className="numeric-cell">{item.carbs}</td>
-                <td className="numeric-cell">{item.protein}</td>
-                <td className="tablet-only">{item.description}</td>
-                <td className="actions-cell"><a className="link icon-only"><i>compose</i></a><a className="link icon-only"><i>trash</i></a></td>
-              </tr>
+              <TableRow key={item.calories}>
+                <TableCell checkbox />
+                <TableCell label>{item.name}</TableCell>
+                <TableCell numeric>{item.calories}</TableCell>
+                <TableCell numeric>{item.fat}</TableCell>
+                <TableCell numeric>{item.carbs}</TableCell>
+                <TableCell numeric>{item.protein}</TableCell>
+                <TableCell tabletOnly>{item.description}</TableCell>
+                <TableCell actions>
+                  <a className="link icon-only">
+                    <Icon ifIos="f7:compose" ifMaterial="material:edit" />
+                  </a>
+                  <a className="link icon-only">
+                    <Icon ifIos="f7:trash" ifMaterial="material:delete" />
+                  </a>
+                </TableCell>
+              </TableRow>
             </For>
-          </tbody>
+          </TableBody>
         </table>
       </div>
     </div>
-    <div className="block-title">Collapsible</div>
-    <div className="block-header">
+    <Block title='Collapsible' />
+    <BlockHeader>
       <p>The following table will be collapsed to kind of List View on small screens:</p>
-    </div>
+    </BlockHeader>
     <div className="card data-table data-table-collapsible data-table-init">
       <div className="card-header">
         <div className="data-table-title">Nutrition</div>
-        <div className="data-table-actions"><a className="link icon-only"><i>sort</i></a><a className="link icon-only"><i>more</i></a></div>
+        <div className="data-table-actions">
+          <a className="link icon-only">
+            <Icon ifIos="f7:sort" ifMaterial="material:sort" />
+          </a>
+          <a className="link icon-only">
+            <Icon ifIos="f7:more_vertical_round" ifMaterial="material:more_vert" />
+          </a>
+        </div>
       </div>
       <div className="card-content">
         <table>
-          <thead>
-            <tr>
-              <th className="label-cell">Desert (100g serving)</th>
-              <th className="numeric-cell">Calories</th>
-              <th className="numeric-cell">Fat (g)</th>
-              <th className="numeric-cell">Carbs</th>
-              <th className="numeric-cell">Protein (g)</th>
-            </tr>
-          </thead>
-          <tbody>
+          <TableHeader>
+            <TableRow>
+              <TableCell header label>Desert (100g serving)</TableCell>
+              <TableCell header numeric>Calories</TableCell>
+              <TableCell header numeric>Fat (g)</TableCell>
+              <TableCell header numeric>Carbs</TableCell>
+              <TableCell header numeric>Protein (g)</TableCell>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
             <For each="item" of={data}>
-              <tr key={item.calories}>
-                <td className="label-cell">{item.name}</td>
-                <td className="numeric-cell">{item.calories}</td>
-                <td className="numeric-cell">{item.fat}</td>
-                <td className="numeric-cell">{item.carbs}</td>
-                <td className="numeric-cell">{item.protein}</td>
-              </tr>
+              <TableRow key={item.calories}>
+                <TableCell label>{item.name}</TableCell>
+                <TableCell numeric>{item.calories}</TableCell>
+                <TableCell numeric>{item.fat}</TableCell>
+                <TableCell numeric>{item.carbs}</TableCell>
+                <TableCell numeric>{item.protein}</TableCell>
+              </TableRow>
             </For>
-          </tbody>
+          </TableBody>
         </table>
       </div>
     </div>

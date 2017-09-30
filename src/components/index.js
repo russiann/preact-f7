@@ -102,11 +102,18 @@ export { ShowWhen } from './ShowWhen/ShowWhen';
 export { Sheet } from './Sheet/Sheet';
 export { SheetToolbar } from './Sheet/SheetToolbar';
 
-//PullToRefresh
+// PullToRefresh
 export { PullToRefresh } from './PullToRefresh/PullToRefresh';
 
-//InfiniteScroll
+// InfiniteScroll
 export { InfiniteScroll } from './InfiniteScroll/InfiniteScroll';
 
 // Panel
 export { Panel } from './Panel/Panel';
+
+// Table
+export { Table } from './Table/Table';
+export { TableHeader } from './Table/TableHeader';
+export { TableRow } from './Table/TableRow';
+export { TableBody } from './Table/TableBody';
+export { TableCell } from './Table/TableCell';
