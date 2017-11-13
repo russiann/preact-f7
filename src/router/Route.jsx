@@ -26,8 +26,7 @@ class Route extends Component {
     
     const route = {
       path,
-      async: (next) => {
-
+      async: (router, route, resolve) => {
         const config = {
           component: {
             template: () => {
@@ -45,7 +44,7 @@ class Route extends Component {
         };
 
         if (_protected === undefined) {
-          return next(config);
+          return resolve(config);
         }
 
         Promise
