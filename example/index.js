@@ -1,6 +1,8 @@
 import { h, Component } from 'preact';
 import 'framework7/dist/css/framework7.css';
-import F7 from 'framework7';
+// import F7 from 'framework7/dist/js/framework7.min';
+import { Framework7 as F7} from 'framework7';
+
 import { Framework7, View, Router, Route, Navbar, Page, Panel } from '../dist/preact-f7';
 
 import './assets/stylesheets/styles.css';
