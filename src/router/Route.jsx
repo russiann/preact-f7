@@ -26,7 +26,7 @@ class Route extends Component {
     
     const route = {
       path,
-      async: (router, route, resolve) => {
+      async: (router, route, resolve, reject) => {
         const config = {
           component: {
             template: () => {
@@ -50,8 +50,13 @@ class Route extends Component {
         Promise
           .resolve()
           .then(_protected)
-          .then(canKeepGoing => {
-            canKeepGoing ? next(config) : next({})
+          .then(data => {
+            const instance = getInstance();
+            if (data && data.redirectTo) {
+              instance.router.navigate({ url: '/signin' });
+            } else {
+              return data ? resolve(config) : reject({})
+            }
           });
       },
       ...options

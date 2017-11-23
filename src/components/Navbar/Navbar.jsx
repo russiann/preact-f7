@@ -3,13 +3,22 @@ import { h, Component } from 'preact';
 
 // const navbarInnerClasses = createClassName('navbar-inner', ['sliding'])
 
-const Navbar = ({children, title, subtitle, left, right, disableBackButton}) => (
+const Navbar = ({children, title, subtitle, left, right, disableBackButton, leftOpenModal, rightOpenModal}) => (
   <div className="navbar">
     <div className="navbar-inner sliding">
 
       <Choose>
         <When condition={ left }>
-          <div className="left">{left}</div>
+
+          <Choose>
+            <When condition={leftOpenModal && typeof leftOpenModal === 'string'}>
+              <div className="left panel-open" data-panel={leftOpenModal}>{left}</div>
+            </When>
+            <Otherwise>
+              <div className="left">{left}</div>
+            </Otherwise>
+          </Choose>
+          
         </When>
 
         <When condition={ !disableBackButton }>
@@ -30,7 +39,16 @@ const Navbar = ({children, title, subtitle, left, right, disableBackButton}) => 
       </div>
 
       <If condition={ right }>
-        <div className="right">{right}</div>
+
+        <Choose>
+          <When condition={rightOpenModal && typeof rightOpenModal === 'string'}>
+            <div className="right panel-open" data-panel={rightOpenModal}>{right}</div>
+          </When>
+          <Otherwise>
+            <div className="right">{right}</div>
+          </Otherwise>
+        </Choose>
+        
       </If>
 
       {children}

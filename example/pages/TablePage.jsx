@@ -1,5 +1,5 @@
 import { h } from 'preact';
-import { Page, Navbar, Block, BlockHeader, Table, TableHeader, TableRow, TableBody, TableCell, Icon } from '../../dist/preact-f7';
+import { Page, Navbar, Block, BlockHeader, Table, TableHeader, TableRow, TableBody, TableCell, Icon, Card, CardHeader, CardContent, CardFooter  } from '../../dist/preact-f7';
 
 const data = [{
   name: 'Frozen yogurt',
@@ -233,8 +233,10 @@ export default () => (
       </div>
     </div>
     <Block title='With title and different actions on select' />
-    <div className="data-table data-table-init card">
-      <div className="card-header">
+    
+    <Card className="data-table data-table-init">
+    
+      <CardHeader>
         <div className="data-table-header">
           <div className="data-table-title">Nutrition</div>
           <div className="data-table-actions">
@@ -260,12 +262,13 @@ export default () => (
             </a>
           </div>
         </div>
-      </div>
-      <div className="card-content">
+      </CardHeader>
+
+      <CardContent>
         <table>
           <TableHeader>
             <TableRow>
-              <TableCell header checkbox />
+              <TableCell header checkbox onChange={console.log}/>
               <TableCell header label>Desert (100g serving)</TableCell>
               <TableCell header numeric>Calories</TableCell>
               <TableCell header numeric>Fat (g)</TableCell>
@@ -280,7 +283,7 @@ export default () => (
           <TableBody>
             <For each="item" of={data}>
               <TableRow key={item.calories}>
-                <TableCell checkbox />
+                <TableCell checkbox onChange={console.log} />
                 <TableCell label>{item.name}</TableCell>
                 <TableCell numeric>{item.calories}</TableCell>
                 <TableCell numeric>{item.fat}</TableCell>
@@ -291,8 +294,9 @@ export default () => (
             </For>
           </TableBody>
         </table>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
+
     <Block title='Alternate header with actions' />
     <div className="data-table data-table-init card">
       <div className="card-header">

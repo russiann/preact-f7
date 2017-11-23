@@ -2,7 +2,7 @@ import { h } from 'preact';
 // import { createClassName } from 'create-classname';
 // const badgeClass = createClassName('badge', [{ name: 'color', className: ({ color }) => `color-${color}` }]);
 
-const InputText = ({ type, placeholder, label, media, children, value, ...props }) => (
+const InputText = ({ type, placeholder, label, media, children, ...props }) => (
   <li className="item-content item-input">
     
     <If condition={media}>
